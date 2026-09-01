@@ -27,3 +27,4 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` and `${CLAUDE_P
 - A pivot rearranges the queue; it never touches Done history and never moves the in-flight spike's status.
 - Dropping is the mentor's call in the end — if you're unsure between rework and drop, recommend rework and flag it.
 - If the "gap" is really the whole plan being wrong (three or more tickets dropped or reworked), stop and recommend a fresh `spike-plan` session instead of pivoting piecemeal.
+- Feed the catalog: if the gap ticket needed off-catalog exit questions, or the pivot split a flat catalog topic into a sequence, flag it to the mentor for promotion into the catalog (as a topic or a track) so the next mentee inherits the same ladder.

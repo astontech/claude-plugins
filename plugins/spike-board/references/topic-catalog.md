@@ -4,7 +4,11 @@ The shared ladder for known topics. Exit questions here are **verbatim standards
 
 Depth levels: **Aware** = can explain what it is, when a team reaches for it, and when to escalate; couldn't operate it. **Working** = can perform the everyday tasks a dev on a team using it actually does (the default target). **Deep** = design/debug/tradeoff level; almost never a mentee target.
 
+Tracked topics (currently Kafka and CI/CD) assign their exit questions **per track step**: one step = one spike ticket, and a ticket takes its step's questions verbatim. The step split is a default, not a required sequence — planners may hand a mentee any prerequisite-valid subset of steps in any valid order, and entry-point personalization means skipping steps whose questions the mentee can already answer. Out-of-scope fences stay topic-level; the ceiling applies to the whole track.
+
 Topics not in this catalog: draft exit questions in the same style — concrete, answerable, consumer-not-operator — and keep the same section shape (level, exit questions, out of scope, prerequisites, track).
+
+This catalog grows by demand, in both dimensions. When a skill drafts exit questions for an off-catalog topic, flag them to the mentor for promotion into the catalog, so the next mentee on that topic faces the same questions instead of a second independent draft. When a flat topic proves too big in practice — a spike splits at a partial presentation's disposition, or a pivot breaks it up — flag the split for promotion as a track. Promotion is always the mentor's act.
 
 ---
 
@@ -131,21 +135,32 @@ Prerequisites: none.
 
 ## CI/CD — Working
 
-Exit questions:
-- What is CI actually for — what class of problem does it catch that local development doesn't?
-- What are the stages of your pipeline, in what order, and why that order?
-- When the pipeline fails, how do you tell a compile error from a test failure from an environment problem in the logs?
-- What's a workflow trigger — every-push vs. pull-request — and why gate merges on a green build?
-- What is a runner, and why might a build pass locally but fail there?
-
 Out of scope: self-hosted runner setup, secrets management beyond "they exist and never go in the workflow file", matrix builds, caching optimization.
 Prerequisites: Git; Docker for the image-building and later track spikes.
 
 Track:
-1. Build a CI pipeline from scratch (entry)
-2. Quality gates: linter, coverage threshold, branch protection (unlocks after 1)
-3. Cloud test environment (unlocks after 2 · requires: Docker spike)
-4. Automatic deploy on green build (capstone — unlocks after 3)
+
+1. **Build a CI pipeline from scratch** (entry)
+   - What is CI actually for — what class of problem does it catch that local development doesn't?
+   - What are the stages of your pipeline, in what order, and why that order?
+   - When the pipeline fails, how do you tell a compile error from a test failure from an environment problem in the logs?
+   - What's a workflow trigger, and when do you run on every push vs. on pull requests?
+   - What is a runner, and why might a build pass locally but fail there?
+
+2. **Quality gates: linter, coverage threshold, branch protection** (unlocks after 1)
+   - Why gate merges on a green build, and what is branch protection actually enforcing?
+   - What does a coverage threshold protect against — and what gaming does it invite?
+   - Why fail the build over a lint finding the IDE already shows?
+
+3. **Cloud test environment** (unlocks after 2 · requires: Docker spike)
+   - What class of bug does a deployed test environment catch that the CI test stage doesn't?
+   - How does your pipeline get the app running somewhere reachable — image build, push, deploy — and in what order?
+   - How does the test environment's configuration differ from local, and where do its secrets live?
+
+4. **Automatic deploy on green build** (capstone — unlocks after 3)
+   - What has to be true before you trust a green build to ship with no human in the loop?
+   - When the deploy itself fails, how do you find out, and what's the rollback story?
+   - What's the difference between continuous delivery and continuous deployment — and which did you build?
 
 ## Kubernetes — Aware, edging Working
 
@@ -161,20 +176,26 @@ Prerequisites: Docker (hard requirement — redirect if missing).
 
 ## Kafka / messaging — Working
 
-Exit questions:
-- What problem does Kafka solve that a REST call between services doesn't?
-- What are a topic, partition, producer, consumer, and consumer group, and how do they relate?
-- How do you publish and consume a message with Spring Kafka (`@KafkaListener`, `KafkaTemplate`)?
-- What happens when a consumer is down while messages are produced — and what does that tell you about how Kafka differs from a queue?
-- What is an offset, and what does it mean to commit one?
-
 Out of scope: cluster administration, partition rebalancing internals, Kafka Streams / ksqlDB, schema registry and Avro, exactly-once semantics, performance tuning.
 Prerequisites: Docker (for the local broker); Spring Boot mechanics.
 
 Track:
-1. Produce and consume messages from a Spring Boot app (entry)
-2. Consumer groups: run two instances of your consumer and explain who gets what (unlocks after 1)
-3. Error handling: retries and dead-letter topics (unlocks after 2)
+
+1. **Produce and consume messages from a Spring Boot app** (entry)
+   - What problem does Kafka solve that a REST call between services doesn't?
+   - What are a topic, partition, producer, and consumer, and how do they relate?
+   - How do you publish and consume a message with Spring Kafka (`@KafkaListener`, `KafkaTemplate`)?
+
+2. **Consumer groups: run two instances of your consumer and explain who gets what** (unlocks after 1)
+   - What is a consumer group, and who gets what when two instances of your consumer are running?
+   - What happens when a consumer is down while messages are produced — and what does that tell you about how Kafka differs from a queue?
+   - What is an offset, and what does it mean to commit one?
+
+3. **Error handling: retries and dead-letter topics** (unlocks after 2)
+   - What does Spring Kafka do by default when your `@KafkaListener` throws, and why is that dangerous?
+   - What's the difference between blocking retries and a retry topic, and when is retrying pointless (a poison-pill message)?
+   - What is a dead-letter topic, and what belongs on a message when you park it there?
+   - Once a message lands in the DLT, what happens next — who notices, and how does it get reprocessed?
 
 ## Security fundamentals — Aware (deliberately)
 
