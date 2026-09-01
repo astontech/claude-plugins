@@ -22,6 +22,8 @@ The ticket you produce is a **draft for refinement**: the mentor reviews it in t
 
 Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before saying anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee unless this is an operator machine, and their board already says where they are and where they're going. While loading, flag the board hygiene problems the conventions describe rather than working around them.
 
+**Load silently.** The mentee's first visible output from you is the Step 1 template — optionally preceded by one sentence naming a board hygiene problem, nothing else. Never narrate the setup: not the marker check, not who you decided the mentee is, not "loading your board", not what tools you called. If you find yourself writing a sentence about how you know who they are, delete it.
+
 Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` now — the interview pastes from both.
 
 ## The interview — a fixed ladder
@@ -49,13 +51,13 @@ Your board is empty, so this is your first spike.
 **Template B — a path exists** (a spike in flight and/or a queued To Do chain):
 
 ```
-Here's where you are: ⟨"KEY — title is in STATUS" for the in-flight ticket, or "nothing is in flight" if none⟩. Your queue behind it: ⟨KEY → KEY → KEY in blocked-by order, or "empty"⟩.
+Here's where you are: ⟨either `KEY — title` is in ⟨STATUS⟩, or: nothing is in flight⟩. Your queue behind it: ⟨KEY → KEY → KEY⟩⟨or: empty⟩.
 
 Is this spike the **next step on that path**, or **something new**?
 
 - **Next step** — ⟨next-up KEY⟩ is already drafted. Run `/spike-board:spike-refine ⟨KEY⟩` to tighten it; I won't write a duplicate here.
 - **Something new that changes the path or cuts in line** — that's a pivot. Run `/spike-board:spike-pivot` and it will reconcile the queue.
-- **A parallel topic that leaves your chain alone** — tell me the topic and one concrete sentence on what you can't do today because of it, and I'll draft it here. It queues behind ⟨in-flight or head KEY⟩: one spike in flight at a time.
+- **A parallel topic that leaves your chain alone** — tell me the topic and one concrete sentence on what you can't do today because of it, and I'll draft it here. You'll file it as a proposed chain, blocked by ⟨in-flight KEY⟩ so it can't start before your current spike; where it sits against the rest of your queue is your mentor's call at refinement.
 ```
 
 If they answer *next step* or *pivot*, hand off with one sentence and stop — the interview is over. If they answer *parallel topic*, continue to Step 2.
@@ -186,7 +188,9 @@ Show the mentee the finished draft first, then offer to file it. If the `atlassi
 
 The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the catalog's track when one exists (one step per ticket, verbatim questions), otherwise a proposed sequence in the same shape (flag drafted questions for catalog promotion). Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
 
-The mentee files the whole chain as real tickets: entry spike at the head, each follow-on `is blocked by` the one before it, each under its topic's epic. A conversation-only track proposal is forbidden — a proposal that isn't on the board doesn't exist, and the mentor's review of the filed queue is the agreement step (refinement comments, `spike-refine`, or `spike-pivot` reshape it from there). In the markdown fallback, output every ticket in the chain, each with its own Filing block including its `is blocked by` link.
+The mentee files the whole chain as real tickets: entry spike at the head, each follow-on `is blocked by` the one before it, each under its topic's epic.
+
+**Filing doesn't schedule.** A filed chain is a proposal on the board, not a commitment to run next. When the mentee already has a path (Template B, parallel-topic answer), the new chain's head is linked `is blocked by` the **in-flight** ticket — never by the tail of the existing queue, and never left unblocked. That encodes the one thing already known (nothing starts before the current spike) and leaves its position against the existing queue to the mentor at refinement, who re-links it or runs `spike-pivot`. Every ticket in the new chain carries the *Pending refinement* line, the entry included. Say this to the mentee in one sentence when you hand over the chain: filing it proposes it; refinement decides when it runs. A conversation-only track proposal is forbidden — a proposal that isn't on the board doesn't exist, and the mentor's review of the filed queue is the agreement step (refinement comments, `spike-refine`, or `spike-pivot` reshape it from there). In the markdown fallback, output every ticket in the chain, each with its own Filing block including its `is blocked by` link.
 
 ## Tone
 

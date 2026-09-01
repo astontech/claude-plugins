@@ -26,7 +26,10 @@ the home for spike documentation. All four skills read and write both through th
   with `is blocked by` links. There is no separate proposal artifact — never park
   a track proposal in a description, comment, or chat. The mentor's review of the
   filed tickets is the agreement step; `spike-refine` and `spike-pivot` reshape
-  from there.
+  from there. **Filing doesn't schedule:** a chain filed beside an existing path
+  has its head linked `is blocked by` the in-flight ticket (never the queue's
+  tail, never unblocked) and every ticket marked *Pending refinement*; its order
+  against the existing queue is the mentor's decision at refinement.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
 - **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
@@ -98,7 +101,9 @@ boards — load and speak to the current user's state only.
 ## Reading a mentee's state
 
 Start every skill by loading this — where they are and where they're going — before
-asking the mentee anything. To know where a mentee stands, query the board — never
+asking the mentee anything, and load it **silently**: the mentee's first visible
+output is the skill's opening step, never a narration of the marker check, the
+identity resolution, or the board queries. To know where a mentee stands, query the board — never
 rely on memory or a side file:
 
 1. Their **Done** tickets → what's been completed (and which exit questions are behind them).
