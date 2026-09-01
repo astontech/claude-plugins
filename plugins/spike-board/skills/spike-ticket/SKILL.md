@@ -18,6 +18,18 @@ The ticket you produce is a **draft for refinement**: the mentor reviews it in t
 - **One goal per spike.** If the goal can't be stated in one sentence, the spike is too broad — split it, and put the rest in the suggested track.
 - **Prerequisites redirect, one hop max.** If the spike needs a technology the mentee has never used (e.g., a CI/CD spike that needs Docker), draft the prerequisite spike *instead*, and note the blocked spike for the track. If reaching the spike would need two or more prerequisite detours, the mentee is entering this track too early — say so and suggest a different starting spike.
 
+## Before the interview
+
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before asking anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee unless this is an operator machine, and their board already says where they are and where they're going.
+
+What you load decides how the interview opens:
+
+- **Empty board** (no spike tickets assigned to them). A first spike. Ask for the topic and the gap, and offer the catalog's topic list as a menu — this is the one case where the list belongs in the opening question.
+- **A path exists** (a spike in flight and/or a queued To Do chain). Say where they are in two sentences — the in-flight ticket, the unblocked head of the queue — and ask whether this is the next step on that path or something new. *Next step:* the queued ticket already is the draft; tightening it is `spike-refine`'s job, so hand off instead of writing a duplicate. *Something that cuts the line or changes the path:* that's a pivot, and restructuring the queue is `spike-pivot`'s job — hand off. *A genuinely parallel topic* that leaves the current chain alone: continue here, and say plainly that one spike is in flight at a time, so the new chain queues behind the current one.
+- **Only Done tickets.** Note what's behind them — those exit questions are passed and are skipped, not re-tested — then interview as for an empty board, offering the catalog's follow-on steps for their Done topics before the full list.
+
+While loading, flag the board hygiene problems the conventions describe rather than working around them.
+
 ## The interview
 
 Keep it short — one or two rounds of questions, not an interrogation. Don't ask *why now* (for trainees the answer is always an upcoming project — assume it) and don't ask about workload or schedule pressure (the spike is their focus; the default time-box already fits). Gather:
