@@ -33,8 +33,11 @@ for the presentation.
 
 - **Space:** the Spike Board space. Search Confluence for it before creating pages;
   if it doesn't exist yet, ask the mentor rather than creating a space yourself.
-- **Page location:** one parent page per track (matching the epic), spike pages
-  beneath it.
+- **Page location:** each mentee has their own folder in the space, named after
+  them; their spike pages go inside it, newest last — the folder reads as a
+  chronological record of their journey. (Track grouping lives in Jira via epics;
+  don't mirror it in Confluence.) Create the mentee's folder on their first spike
+  if it doesn't exist yet.
 - **Page title:** the ticket key plus the spike title, e.g.
   `SCRUM-42 — Kafka: produce and consume messages from a Spring Boot app`.
 - **Link both ways:** the ticket's artifact comment links the page; the page opens
