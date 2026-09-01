@@ -14,6 +14,12 @@ the home for spike documentation. All four skills read and write both through th
   is therefore expected behavior, not an error: switch to the paste-ready
   markdown fallback without retrying. Jira reads and all Confluence tools work
   for everyone.
+- **A fallback ticket always ships with its filing details.** Whenever you output
+  paste-ready markdown instead of writing to Jira, end with a short Filing block
+  the mentee can follow by hand: project `SCRUM`, status To Do, the epic to file
+  under (the epic named after the spike's topic — tell them to create it, named
+  exactly after the topic, if it doesn't exist yet), assignee = the mentee, and
+  any `is blocked by` links. A draft without a destination gets misfiled.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
 - **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
