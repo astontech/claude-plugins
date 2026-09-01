@@ -1,7 +1,7 @@
 {
   "name": "spike-board",
   "description": "Spike Board mentee toolkit — draft, plan, refine, and pivot spike tickets on the Jira board.",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "author": {
     "name": "Aston Technologies"
   }

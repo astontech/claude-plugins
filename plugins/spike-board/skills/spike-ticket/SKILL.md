@@ -20,26 +20,105 @@ The ticket you produce is a **draft for refinement**: the mentor reviews it in t
 
 ## Before the interview
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before asking anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee unless this is an operator machine, and their board already says where they are and where they're going.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before saying anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee unless this is an operator machine, and their board already says where they are and where they're going. While loading, flag the board hygiene problems the conventions describe rather than working around them.
 
-What you load decides how the interview opens:
+Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` now — the interview pastes from both.
 
-- **Empty board** (no spike tickets assigned to them). A first spike. Ask for the topic and the gap, and offer the catalog's topic list as a menu — this is the one case where the list belongs in the opening question.
-- **A path exists** (a spike in flight and/or a queued To Do chain). Say where they are in two sentences — the in-flight ticket, the unblocked head of the queue — and ask whether this is the next step on that path or something new. *Next step:* the queued ticket already is the draft; tightening it is `spike-refine`'s job, so hand off instead of writing a duplicate. *Something that cuts the line or changes the path:* that's a pivot, and restructuring the queue is `spike-pivot`'s job — hand off. *A genuinely parallel topic* that leaves the current chain alone: continue here, and say plainly that one spike is in flight at a time, so the new chain queues behind the current one.
-- **Only Done tickets.** Note what's behind them — those exit questions are passed and are skipped, not re-tested — then interview as for an empty board, offering the catalog's follow-on steps for their Done topics before the full list.
+## The interview — a fixed ladder
 
-While loading, flag the board hygiene problems the conventions describe rather than working around them.
+The interview is three steps, **one message per step**, in this order. Each step has a template. Send the template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting as written. Don't add questions a step doesn't ask, don't merge two steps into one message, don't skip a step unless the step says when to skip it. You may put **one** short sentence before a template reacting to what they just said — nothing more. Everything a mentee sees at these three moments should be the same for every mentee, every session.
 
-## The interview
+Don't ask *why now* (for trainees the answer is always an upcoming project — assume it). Don't ask about workload, schedule, or hours (the spike is their focus; the default time-box already fits). Don't ask about their environment unless the topic demands something unusual. Don't ask about time-box, artifact type, or depth level — you decide those (see **Scoping the ticket**).
 
-Keep it short — one or two rounds of questions, not an interrogation. Don't ask *why now* (for trainees the answer is always an upcoming project — assume it) and don't ask about workload or schedule pressure (the spike is their focus; the default time-box already fits). Gather:
+### Step 1 — Opener
 
-1. **The topic and the gap.** What do they want to learn, and what specifically can't they do or read today because of it? Their own words become the Gap section, so get one concrete sentence — "I can't contribute to code that touches X" beats "I want to know X."
-2. **Self-assessment against the exit questions.** Look the topic up in `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` (read it now if you haven't). If the topic is in the catalog, show the mentee its exit questions and ask which they can already answer confidently. For a tracked topic (per-step questions), assess step by step — the mentee's entry point is the first step with questions they can't answer. If it isn't in the catalog, draft 4–6 exit questions in the same style — concrete, answerable, Working-level, consumer-not-operator — run the same self-assessment on those, and at the end of the session flag the drafted questions to the mentor for promotion into the catalog (the catalog grows by demand; promotion is the mentor's act). The questions they *can't* answer define this spike; the ones they can answer are skipped, not re-tested.
-   Be gently skeptical of "I know that one": ask them to answer one of the claimed questions in a sentence. If the answer is vague, include that question in the spike. This matters because their claim gets stress-tested publicly at the presentation — catching an optimistic self-assessment now is a kindness.
-3. **Prerequisites.** Ask what adjacent tools the spike would need (the catalog notes common prerequisites). If a required technology is completely new to them, pivot: draft the prerequisite spike, and put the original in the suggested track as blocked by it.
+Pick exactly one template from what the board said. Where a template calls for the catalog menu, paste the block from `catalog-menu.md` between its markers, verbatim.
 
-Don't ask about things you can decide yourself: the time-box is in working days, full-time — trainees work their spike as their sole focus. Default 2 days; 1 for a narrow gap, 3 for a meatier topic, 5 (a full week) only for genuinely advanced material — anything that wants more is two spikes; the artifact type follows naturally from the topic (hands-on tech → demo repo plus a short Confluence companion page; process/concept topic → the Confluence page is the artifact — see the Confluence section of `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`); and assume they can run the stack on their own machine — only raise environment questions when the topic demands something unusual.
+**Template A — empty board** (no spike tickets assigned to them):
+
+```
+Your board is empty, so this is your first spike.
+
+**1. What do you want to learn, and what can't you do today because of it?** One concrete sentence — "I can't follow the PRs that touch our Kafka listeners" is usable; "I want to learn Kafka" isn't. Your sentence becomes the ticket's Gap section.
+
+**2. Pick a topic from the catalog, or name something else.** Catalog topics come with locked exit questions.
+
+⟨catalog menu block⟩
+```
+
+**Template B — a path exists** (a spike in flight and/or a queued To Do chain):
+
+```
+Here's where you are: ⟨"KEY — title is in STATUS" for the in-flight ticket, or "nothing is in flight" if none⟩. Your queue behind it: ⟨KEY → KEY → KEY in blocked-by order, or "empty"⟩.
+
+Is this spike the **next step on that path**, or **something new**?
+
+- **Next step** — ⟨next-up KEY⟩ is already drafted. Run `/spike-board:spike-refine ⟨KEY⟩` to tighten it; I won't write a duplicate here.
+- **Something new that changes the path or cuts in line** — that's a pivot. Run `/spike-board:spike-pivot` and it will reconcile the queue.
+- **A parallel topic that leaves your chain alone** — tell me the topic and one concrete sentence on what you can't do today because of it, and I'll draft it here. It queues behind ⟨in-flight or head KEY⟩: one spike in flight at a time.
+```
+
+If they answer *next step* or *pivot*, hand off with one sentence and stop — the interview is over. If they answer *parallel topic*, continue to Step 2.
+
+**Template C — only Done tickets** (nothing in flight, nothing queued):
+
+```
+You've finished ⟨N⟩ spike⟨s⟩: ⟨KEY — title, one per line⟩. Nothing is in flight or queued, so this is a fresh start.
+
+**1. What do you want to learn next, and what can't you do today because of it?** One concrete sentence — "I can't follow the PRs that touch our Kafka listeners" is usable; "I want to learn Kafka" isn't. Your sentence becomes the ticket's Gap section.
+
+**2. Pick a topic from the catalog, or name something else.** Natural next steps from what you've finished: ⟨the catalog's next track step or dependent topics for each Done topic, comma-separated⟩. Catalog topics come with locked exit questions.
+
+⟨catalog menu block⟩
+```
+
+Wait for their answer. If they gave a topic but no gap sentence, or a gap but no topic, ask only for the missing half in one sentence — don't re-send the template.
+
+### Step 2 — Self-assessment against the exit questions
+
+Look the topic up in `topic-catalog.md`.
+
+**Template D — catalog topic:**
+
+```
+⟨Topic⟩ is a catalog topic⟨, and a ⟨N⟩-step track — you enter at the first step whose questions you can't answer⟩. These are the exit questions⟨ for step ⟨n⟩, ⟨step title⟩⟩, verbatim:
+
+1. ⟨question⟩
+2. ⟨question⟩
+…
+
+Which of these could you answer confidently right now? Give me the numbers. For each one you claim, answer it in a sentence — anything vague goes into the spike.
+```
+
+For a tracked topic, show one step at a time, starting at step 1; if they clear every question in a step, re-send Template D for the next step. The entry point is the first step with questions they can't answer.
+
+**Template E — off-catalog topic:**
+
+```
+⟨Topic⟩ isn't in the catalog, so these are draft exit questions in the catalog's style — Working level, consumer-not-operator. I'll flag them to your mentor for promotion into the catalog.
+
+1. ⟨question⟩
+2. ⟨question⟩
+…  (4–6 total)
+
+Which of these could you answer confidently right now? Give me the numbers. For each one you claim, answer it in a sentence — anything vague goes into the spike.
+```
+
+Judge their one-sentence answers. A concrete answer skips the question; a vague one keeps it in the spike — their claim gets stress-tested publicly at the presentation, so catching optimism now is a kindness. The questions they can't answer define this spike.
+
+### Step 3 — Prerequisites
+
+Take the prerequisites from the topic's catalog entry. **Skip this step entirely if the catalog says `Prerequisites: none`** — go straight to scoping. For an off-catalog topic, name the one or two technologies the spike can't be done without.
+
+**Template F:**
+
+```
+Last check. ⟨Topic⟩ leans on ⟨prerequisite⟩⟨ and ⟨prerequisite⟩⟩. Have you used ⟨it/each⟩ for real before — yes or no⟨ for each⟩?
+```
+
+If a required technology is completely new to them, apply the redirect rule: draft the prerequisite spike instead, and put the original in the filed queue as blocked by it. Two or more missing prerequisites means they're entering this track too early — say so and suggest a different starting spike.
+
+After Step 3 (or after Step 2 when Step 3 is skipped), stop asking. Everything else is yours to decide.
 
 ## Scoping the ticket
 
