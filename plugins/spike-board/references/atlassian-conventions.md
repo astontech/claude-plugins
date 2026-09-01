@@ -8,18 +8,21 @@ the home for spike documentation. All four skills read and write both through th
 
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
-- **Workflow:** Backlog → To do → In progress → In review (finished, awaiting presentation) → Done
+- **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
+  There is **no Backlog status** on this board — the queue lives in To Do, ordered by
+  `is blocked by` links. The next-up spike is the mentee's To Do ticket with no
+  unresolved blockers; everything behind it is queued.
 - **Epics = topic tracks.** Every spike ticket belongs to the epic for its track
   (e.g., the Kafka track, the CI/CD track). Create a new epic only when starting a
   track that has none — name it after the catalog track.
 - **One ticket per mentee per spike.** Two mentees on the same spike hold two
   tickets; pace is individual. Ticket assignee = the mentee.
 - **Prerequisites are `is blocked by` links** between tickets, one hop max.
-- **Template:** `TEMPLATE — Spike (clone me)` sits in Backlog and holds the canonical
+- **Template:** `TEMPLATE — Spike (clone me)` sits in To Do and holds the canonical
   ticket structure. Skill-created tickets follow the same structure (see
   `ticket-template.md`) rather than cloning it.
-- **One spike in flight per mentee.** Pre-created future tickets wait in Backlog /
-  To do; only the current spike is In progress.
+- **One spike in flight per mentee.** Pre-created future tickets wait in To Do,
+  sequenced by `is blocked by` links; only the current spike is In Progress.
 - **Done means:** presented, passed the question round, artifact linked on the
   ticket. Never hours spent.
 
@@ -52,5 +55,10 @@ To know where a mentee stands, query the board — never rely on memory or a sid
 
 1. Their **Done** tickets → what's been completed (and which exit questions are behind them).
 2. Their **In progress / In review** ticket → the spike in flight (there should be at most one).
-3. Their **Backlog / To do** tickets, ordered by `is blocked by` chains → the planned path.
+3. Their remaining **To Do** tickets, ordered by `is blocked by` chains → the planned
+   path; the unblocked head of the chain is next up.
 4. Ticket **comments** → refinement history, progress notes, dead ends, review feedback.
+
+While reading, flag board hygiene problems rather than planning around them: spike
+tickets with no epic parent, and queued tickets with no `is blocked by` links (an
+unlinked queue has no next-up signal). Offer to fix them before proceeding.
