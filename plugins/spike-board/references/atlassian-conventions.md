@@ -84,6 +84,17 @@ matches them. Resolve the subject of any skill like this:
   which mentee the session is about, or accept one named in the request, and query
   by that assignee instead.
 
+The marker is the **only** role signal, and the check is existence-only: test
+whether that exact path exists (`test -f`), never list the directory or reason
+about other files in it. Without the marker, the current user *is* the mentee —
+regardless of their job title, how many tickets they hold, or who else appears on
+the board. Zero tickets means a first spike, not "probably the mentor." Never
+override this from circumstantial evidence, and never ask the user to confirm their
+role. On a mentee machine, keep operator mechanics out of view: don't mention the
+marker, the write gate, or its file state (if a Jira write is denied, say tickets
+are filed by hand and hand over the markdown), and don't summarize other mentees'
+boards — load and speak to the current user's state only.
+
 ## Reading a mentee's state
 
 Start every skill by loading this — where they are and where they're going — before
