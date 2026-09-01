@@ -6,6 +6,14 @@ the home for spike documentation. All four skills read and write both through th
 
 ## Jira
 
+- **Mentee machines cannot write to Jira through this plugin.** A plugin hook
+  denies the Jira write tools (create/edit/transition/link/comment/worklog)
+  unless the machine has the operator marker (`~/.config/spike-board/operator`).
+  Mentees create and move tickets by hand in the Jira UI — that practice is part
+  of the curriculum; the mentor reviews the tickets they create. A write denial
+  is therefore expected behavior, not an error: switch to the paste-ready
+  markdown fallback without retrying. Jira reads and all Confluence tools work
+  for everyone.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
 - **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.

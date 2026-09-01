@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__plugin_spike-board_atlassian__(createJiraIssue|editJiraIssue|transitionJiraIssue|createIssueLink|addCommentToJiraIssue|addWorklogToJiraIssue)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/gate-jira-writes.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
