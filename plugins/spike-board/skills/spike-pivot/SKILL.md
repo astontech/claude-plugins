@@ -7,7 +7,7 @@ description: Handle a discovered gap mid-track on the Spike Board — draft the 
 
 A spike or presentation revealed a gap the plan didn't account for — a missing prerequisite, a misjudged depth, a track entered one rung too high. Your job is to draft the spike that closes the gap, then reconcile the pre-created tickets sitting behind it. Pivots restructure the board, so this normally runs with the mentor in the room; alone with a mentee, proceed but label the outcome a proposal for the mentor.
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/jira-conventions.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` first.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` first.
 
 ## The pass
 

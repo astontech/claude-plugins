@@ -1,7 +1,10 @@
-# Spike Board — Jira conventions
+# Spike Board — Atlassian conventions
 
-The board is the single source of truth for every mentee's path. All four skills read
-and write it through the `atlassian` MCP server (per-user OAuth — you act as yourself).
+The Jira board is the single source of truth for every mentee's path; Confluence is
+the home for spike documentation. All four skills read and write both through the
+`atlassian` MCP server (per-user OAuth — you act as yourself).
+
+## Jira
 
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
@@ -19,6 +22,26 @@ and write it through the `atlassian` MCP server (per-user OAuth — you act as y
   To do; only the current spike is In progress.
 - **Done means:** presented, passed the question round, artifact linked on the
   ticket. Never hours spent.
+
+## Confluence — spike documentation
+
+Every spike gets a Confluence page: the written record of what was learned. For
+write-up or diagram spikes the page *is* the supporting artifact; for hands-on spikes
+it's a short companion to the demo repo (link to the repo, key findings, the
+surprises). Writing it is part of the spike, not extra credit — it's also rehearsal
+for the presentation.
+
+- **Space:** the Spike Board space. Search Confluence for it before creating pages;
+  if it doesn't exist yet, ask the mentor rather than creating a space yourself.
+- **Page location:** one parent page per track (matching the epic), spike pages
+  beneath it.
+- **Page title:** the ticket key plus the spike title, e.g.
+  `SCRUM-42 — Kafka: produce and consume messages from a Spring Boot app`.
+- **Link both ways:** the ticket's artifact comment links the page; the page opens
+  with a link to the ticket (and the demo repo, when there is one).
+- **Suggested skeleton** (a starting shape, not a form to fill): the gap, the exit
+  questions answered in the mentee's own words, how the demo works, what surprised
+  them, what's still fuzzy, links.
 
 ## Reading a mentee's state
 

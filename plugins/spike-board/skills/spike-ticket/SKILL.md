@@ -27,7 +27,7 @@ Keep it short — one or two rounds of questions, not an interrogation. Don't as
    Be gently skeptical of "I know that one": ask them to answer one of the claimed questions in a sentence. If the answer is vague, include that question in the spike. This matters because their claim gets stress-tested publicly at the presentation — catching an optimistic self-assessment now is a kindness.
 3. **Prerequisites.** Ask what adjacent tools the spike would need (the catalog notes common prerequisites). If a required technology is completely new to them, pivot: draft the prerequisite spike, and put the original in the suggested track as blocked by it.
 
-Don't ask about things you can decide yourself: the time-box is in working days, full-time — trainees work their spike as their sole focus. Default 2 days; 1 for a narrow gap, 3 for a meatier topic, 5 (a full week) only for genuinely advanced material — anything that wants more is two spikes; the artifact type follows naturally from the topic (hands-on tech → demo repo; process/concept topic → write-up or diagram); and assume they can run the stack on their own machine — only raise environment questions when the topic demands something unusual.
+Don't ask about things you can decide yourself: the time-box is in working days, full-time — trainees work their spike as their sole focus. Default 2 days; 1 for a narrow gap, 3 for a meatier topic, 5 (a full week) only for genuinely advanced material — anything that wants more is two spikes; the artifact type follows naturally from the topic (hands-on tech → demo repo plus a short Confluence companion page; process/concept topic → the Confluence page is the artifact — see the Confluence section of `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`); and assume they can run the stack on their own machine — only raise environment questions when the topic demands something unusual.
 
 ## Scoping the ticket
 
@@ -70,8 +70,8 @@ take what the material needs, then answer questions.
 
 Scripted demo: <the exact demo moment>
 
-Supporting artifact: <what to build/write> — link it in a comment on
-this ticket before the review.
+Supporting artifact: <what to build/write>, documented on this spike's
+Confluence page — link it in a comment on this ticket before the review.
 
 Done = presented, passed the question round, and artifact linked on
 the ticket. Not done = hours spent.
@@ -89,7 +89,7 @@ The title must name the specific skill, never just the technology: `Spike: Kafka
 
 ## Filing the ticket
 
-Show the mentee the finished draft first, then offer to file it. If the `atlassian` MCP tools are available, create the ticket in Jira with their approval: project `SCRUM`, status **Backlog**, assignee = the mentee, under the epic for its track (see `${CLAUDE_PLUGIN_ROOT}/references/jira-conventions.md`; create the track epic if it doesn't exist yet). If the MCP tools aren't available or the mentee prefers, output the ticket in a fenced markdown block so it pastes cleanly into Jira instead.
+Show the mentee the finished draft first, then offer to file it. If the `atlassian` MCP tools are available, create the ticket in Jira with their approval: project `SCRUM`, status **Backlog**, assignee = the mentee, under the epic for its track (see `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`; create the track epic if it doesn't exist yet). Then offer to stub the spike's Confluence page per the conventions — title from the ticket key, under the track's parent page in the Spike Board space, seeded with the suggested skeleton and a link to the ticket — and link the page in a ticket comment. The mentee fills the page during the spike. If the MCP tools aren't available or the mentee prefers, output the ticket in a fenced markdown block so it pastes cleanly into Jira instead.
 
 After the ticket, add a **Suggested track** section (in the conversation, not on the ticket): the 2–4 spikes that would follow this one in the topic, one line each, with unlock conditions and any cross-topic prerequisites marked (`requires: Docker spike`). Use the catalog's track when one exists; otherwise propose one in the same shape. Label it clearly as a proposal to discuss with the mentor at refinement — materializing it as real Jira tickets is the `spike-plan` skill's job, done at sprint planning.
 

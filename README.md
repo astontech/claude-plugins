@@ -23,7 +23,8 @@ spike board as you. It needs a one-time sign-in — do this right after installi
 4. When asked which site to authorize, pick **astontechnologies.atlassian.net**. If
    you don't see it listed, you're signed into the wrong account — sign out and use
    your Aston account.
-5. Approve the requested access (read and write for Jira work items). This grants
+5. Approve the requested access (read and write for Jira work items and Confluence
+   pages — spike documentation lives in Confluence). This grants
    *Claude acting as you* access to what your account can already see — it does not
    widen your permissions, and every ticket created or edited is attributed to you.
 
@@ -47,3 +48,7 @@ Toolkit for the Spike Board mentee program. Four skills over the shared Jira boa
 
 The topic catalog (`plugins/spike-board/references/topic-catalog.md`) is the single
 source of truth for tracks, prerequisites, and exit-question wording.
+
+Tickets live on the Jira board; every spike documents itself as a Confluence page in
+the Spike Board space (write-ups and diagrams live there; demo code stays in git).
+Conventions for both are in `plugins/spike-board/references/atlassian-conventions.md`.

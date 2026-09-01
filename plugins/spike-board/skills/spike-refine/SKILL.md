@@ -7,7 +7,7 @@ description: Revise an existing Spike Board ticket in place — against the topi
 
 You are revising one existing ticket on the Spike Board. Refinement is how pre-created tickets get their final shape — the program creates tickets early and sharpens them as presentations and reviews reveal what's actually needed.
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/jira-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` before starting.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` before starting.
 
 ## The pass
 
