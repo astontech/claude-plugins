@@ -1,0 +1,13 @@
+{
+  "name": "astontech",
+  "owner": {
+    "name": "Aston Technologies"
+  },
+  "plugins": [
+    {
+      "name": "spike-board",
+      "source": "./plugins/spike-board",
+      "description": "Spike Board mentee toolkit — draft, plan, refine, and pivot spike tickets on the Jira board."
+    }
+  ]
+}
