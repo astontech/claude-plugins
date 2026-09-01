@@ -1,11 +1,11 @@
 ---
 name: spike-plan
-description: Sprint planning for the Spike Board — take a mentee's suggested track and materialize the next few spike tickets in Jira, bucketed under the right epics and sequenced with blocked-by links. Use when the user wants to plan a sprint, plan the next week or two of spikes, create the tickets for a track or path, set up a mentee's queue, or turn a suggested track into real tickets.
+description: Re-plan a Spike Board queue with the mentor — negotiate a path change and materialize or reshape the next few spike tickets in Jira, bucketed under the right epics and sequenced with blocked-by links. Use when the user wants to plan or re-plan a sprint or a mentee's path, set up a queue where none exists, or turn an agreed track into real tickets.
 ---
 
 # Spike sprint planning
 
-You are materializing a mentee's near-term path as real Jira tickets. This normally happens in a planning session with the mentor in the room — if you're talking to a mentee alone, proceed, but say plainly that the plan is a proposal until the mentor has seen it.
+You are negotiating and materializing a mentee's near-term path as real Jira tickets. Mentees file their own proposed queue at drafting time (`spike-ticket` ends by filing the whole chain), so this session is usually **re-planning** — agreeing or reshaping a path with the mentor in the room — or standing up a queue where none exists. If you're talking to a mentee alone, proceed, but say plainly that the plan is a proposal until the mentor has seen it.
 
 Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` before doing anything.
 
@@ -20,7 +20,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` and `${CLAUDE_P
 ## The session
 
 1. **Load state.** Query the board for the mentee's tickets in every status. Summarize what you find in two or three sentences and confirm it matches their understanding — a mismatch here means the board needs fixing before planning does.
-2. **Agree the path.** Start from the suggested track (from `spike-ticket` or the catalog). Check each proposed spike's exit questions against what the mentee's Done tickets already covered — skip anything already behind them. Adjust order for prerequisites and preference; where the catalog and the mentee disagree, surface the tradeoff and recommend, don't just comply.
+2. **Agree the path.** Start from the mentee's filed queue — their To Do chain is the standing proposal; fall back to the catalog track only when no queue exists. Check each proposed spike's exit questions against what the mentee's Done tickets already covered — skip anything already behind them. Adjust order for prerequisites and preference; where the catalog and the mentee disagree, surface the tradeoff and recommend, don't just comply.
 3. **Draft each ticket.** Use the structure in `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` — same standard as a `spike-ticket` draft: one-sentence goal, verbatim catalog exit questions, out-of-scope fences, scripted demo, real starting resources, day-based time-box. For tickets more than one hop out, a rougher scripted demo and resource list is acceptable; note in the ticket that it's pending refinement.
 4. **Show the plan before filing.** Present the full set — titles, time-boxes, sequence, which epic each lands under — and get an explicit go-ahead.
 5. **File.** Create the tickets in project `SCRUM` via the `atlassian` MCP tools: assignee = the mentee, status To Do, each under its track's epic (create the epic if the track has none), `is blocked by` links expressing the sequence — the links are what mark everything behind the next-up ticket as queued, so never skip them. Stub a Confluence page only for the next-up ticket (per the conventions — the mentee fills it during the spike); further-out tickets get their page when they unlock, since a pivot may rework them first. If MCP tools are unavailable, output all tickets as paste-ready markdown and list the epic/link/status placements as a manual checklist.

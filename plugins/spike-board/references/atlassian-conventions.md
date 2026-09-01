@@ -20,6 +20,13 @@ the home for spike documentation. All four skills read and write both through th
   under (the epic named after the spike's topic — tell them to create it, named
   exactly after the topic, if it doesn't exist yet), assignee = the mentee, and
   any `is blocked by` links. A draft without a destination gets misfiled.
+- **Proposed queues are board state, never conversation state.** `spike-ticket`
+  ends with the mentee filing their whole proposed chain: the entry spike at full
+  standard, the follow-ons as rough drafts marked *Pending refinement*, sequenced
+  with `is blocked by` links. There is no separate proposal artifact — never park
+  a track proposal in a description, comment, or chat. The mentor's review of the
+  filed tickets is the agreement step; `spike-refine` and `spike-pivot` reshape
+  from there.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
 - **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
