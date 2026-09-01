@@ -57,9 +57,25 @@ for the presentation.
   questions answered in the mentee's own words, how the demo works, what surprised
   them, what's still fuzzy, links.
 
+## Who the mentee is
+
+Never ask who you're working with — the session already knows. The MCP's OAuth is
+per-user: `atlassianUserInfo` returns the current user, and JQL's `currentUser()`
+matches them. Resolve the subject of any skill like this:
+
+- **Default: the mentee is the current user.** Query their state with
+  `assignee = currentUser()`, use their name for their Confluence folder, and speak
+  to them as the owner of the path ("your next spike", not "the mentee's").
+- **On an operator machine** (the write gate's marker file,
+  `~/.config/spike-board/operator`, exists), the current user is the mentor — ask
+  which mentee the session is about, or accept one named in the request, and query
+  by that assignee instead.
+
 ## Reading a mentee's state
 
-To know where a mentee stands, query the board — never rely on memory or a side file:
+Start every skill by loading this — where they are and where they're going — before
+asking the mentee anything. To know where a mentee stands, query the board — never
+rely on memory or a side file:
 
 1. Their **Done** tickets → what's been completed (and which exit questions are behind them).
 2. Their **In progress / In review** ticket → the spike in flight (there should be at most one).
