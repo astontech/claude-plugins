@@ -162,9 +162,27 @@ The title must name the specific skill, never just the technology: `Spike: Kafka
 
 ## Filing
 
-The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira, ending with its **Filing block** per the conventions: project `SCRUM`, status To Do, the epic named after the topic (create it if missing), assignee = the mentee, and any `is blocked by` links. When the ticket replaces a stub that's already on the board, the Filing block says so instead: *Paste over ⟨KEY⟩'s description; keep its epic and links.*
+The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira. Then, **outside the ticket text**, send **Template F** — the filing and documentation instructions. One fact per line, in this order, nothing joined into a sentence. Use what the board load found for the epic and the Confluence folder (conventions, **Reading a mentee's state**, item 5).
 
-Then print the Confluence page skeleton from the conventions in two or three lines and tell them where it goes, using what the board load found (conventions, **Reading a mentee's state**, item 5). Folder present: *once the ticket has a key, create the page inside your folder ⟨folder title⟩ in the Spike Board space, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.* Folder missing: *you don't have a folder in the Spike Board space yet (astontechnologies.atlassian.net/wiki/spaces/SB). Create a folder — not a page — at the top level of the space, titled ⟨full name⟩; then, once the ticket has a key, create the page inside it, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.* Always say which of the two applies — never the bare "your folder" with no location.
+```
+**Filing**
+- Project: SCRUM
+- Status: To Do
+- Assignee: you
+- Epic: ⟨topic⟩ ⟨— exists | — create it, there isn't one yet⟩
+- Blocked by: ⟨KEY — title | none — this is the head of the chain⟩
+- Also link: ⟨KEY⟩ is blocked by this ticket — ⟨why, e.g. its stub says requires: Docker spike⟩
+
+**Confluence**
+- Space: Spike Board — astontechnologies.atlassian.net/wiki/spaces/SB
+- Folder: ⟨⟨folder title⟩, your folder in the space | you don't have one yet — create a folder (not a page) at the top level of the space, titled ⟨full name⟩⟩
+- Page: once the ticket has a key, create it inside your folder, titled ⟨KEY⟩ — ⟨spike title⟩
+- Opens with: links to the ticket and the demo repo
+- Then: the gap, the exit questions in your own words, how the demo works, what surprised you, what's still fuzzy
+- When it exists: link the page in a ticket comment
+```
+
+Drop the *Also link* line when no existing ticket needs re-linking; never pad it. When the ticket replaces a stub already on the board, the **Filing** list is one line instead — *Paste over ⟨KEY⟩'s description; keep its epic and links.* — and the **Confluence** list stays. The Folder line always states a location — never a bare "your folder".
 
 ## Filing the queue
 
