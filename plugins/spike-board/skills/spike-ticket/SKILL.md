@@ -176,7 +176,7 @@ The skill never writes to Jira or Confluence — the mentee files by hand, and t
 **Confluence**
 - Space: Spike Board — astontechnologies.atlassian.net/wiki/spaces/SB
 - Folder: ⟨⟨folder title⟩, your folder in the space | you don't have one yet — create a folder (not a page) at the top level of the space, titled ⟨full name⟩⟩
-- Page: once the ticket has a key, create it inside your folder, titled ⟨KEY⟩ — ⟨spike title⟩
+- Page: once the ticket has a key, create it inside your folder, titled KEY — ⟨spike title⟩ (KEY is the SCRUM number Jira assigns when you file)
 - Opens with: links to the ticket and the demo repo
 - Then: the gap, the exit questions in your own words, how the demo works, what surprised you, what's still fuzzy
 - When it exists: link the page in a ticket comment

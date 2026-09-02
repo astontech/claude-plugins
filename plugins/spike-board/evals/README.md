@@ -9,10 +9,16 @@ Mentor-only tooling. Runs the skill headlessly and asserts the fixed templates a
 - The installed plugin (`claude plugin update spike-board@astontech`) at the version
   under test — cases run against the install, not the working tree.
 - Atlassian MCP OAuth valid for the current user.
-- Board fixtures: the current user holds a chain — one In Progress ticket and at
-  least two queued To Do tickets linked `is blocked by` (as of 2026-09-01: SCRUM-22 →
-  SCRUM-23 → SCRUM-24, label `test-fixture`). Cases marked `needs: chain` depend on
-  it. Set `SPIKE_EVAL_NEXT_KEY` to the queue head (default `SCRUM-23`).
+- Board fixtures: the current user holds a chain — one **In Review** ticket whose
+  successor is still a **stub**, then more queued To Do tickets linked `is blocked by`
+  (as of 2026-09-02: SCRUM-22 In Review → SCRUM-23 stub → SCRUM-24, label
+  `test-fixture`). Cases marked `needs: chain` and `needs: chain-inreview` depend on
+  it; `ticket-overdue` asserts the overdue-draft preface that this state triggers. Set
+  `SPIKE_EVAL_NEXT_KEY` to the queue head (default `SCRUM-23`).
+- Confluence fixture: the current user has **no folder** in the Spike Board space
+  (`needs: no-folder`; `ticket-folder-missing` asserts the create-a-folder handover).
+  Once the mentor's own folder exists this case needs a different current user or a
+  sibling case for the folder-present variant.
 - Run from a directory **outside** `~/Projects` so no CLAUDE.md or auto-memory loads;
   the runner does this for you (`~/mentee-sim`).
 

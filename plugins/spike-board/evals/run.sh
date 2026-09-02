@@ -16,7 +16,10 @@ TOOLS=(Read WebFetch WebSearch
   mcp__plugin_spike-board_atlassian__searchJiraIssuesUsingJql
   mcp__plugin_spike-board_atlassian__getJiraIssue
   mcp__plugin_spike-board_atlassian__getAccessibleAtlassianResources
-  mcp__plugin_spike-board_atlassian__lookupJiraAccountId)
+  mcp__plugin_spike-board_atlassian__lookupJiraAccountId
+  mcp__plugin_spike-board_atlassian__getConfluenceSpaces
+  mcp__plugin_spike-board_atlassian__searchConfluenceUsingCql
+  mcp__plugin_spike-board_atlassian__getPagesInConfluenceSpace)
 
 pass=0; fail=0
 if [ $# -gt 0 ]; then names=("$@"); else names=(); for f in "$CASES"/*.env; do names+=("$(basename "$f" .env)"); done; fi
