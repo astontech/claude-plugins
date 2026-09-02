@@ -7,7 +7,7 @@
     {
       "name": "spike-board",
       "source": "./plugins/spike-board",
-      "description": "Spike Board mentee toolkit — draft, plan, refine, and pivot spike tickets on the Jira board."
+      "description": "Spike Board mentee toolkit — interview, research exit questions, and draft spike tickets for the Jira board."
     }
   ]
 }

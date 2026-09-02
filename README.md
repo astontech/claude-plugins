@@ -37,15 +37,21 @@ If the connection ever breaks, re-run `/mcp` → `atlassian` → Authenticate.
 ### spike-board
 
 Toolkit for the Spike Board mentee program: one skill, `spike-ticket`, over the
-shared Jira board. It interviews you about a gap, researches exit questions for the
-topic against the rubric, and hands you a paste-ready ticket plus stubs for the
-spikes behind it. The same skill drafts the next queued stub when the spike ahead of it
-is finished — a spike doesn't move to In Review until its successor is drafted — and
-drafts the gap spike when something has to cut in line. Refinement happens in Jira
-comments; re-linking the queue is done by hand in Jira.
+shared Jira board. Say what you want to learn and where you are with it; the skill
+reads your board, researches exit questions for the topic against the rubric, runs a
+short self-assessment, and hands you a paste-ready ticket, a filing checklist (project,
+epic, links, and where its Confluence page goes), and stubs for the spikes behind it.
+
+The same skill covers the other two moments: when you finish a spike, run it again to
+draft the next stub to full standard — that draft has to be on the board before the
+spike moves to In Review, so your mentor can refine it before you present — and when
+something has to cut in line, it drafts the gap spike and shows what happens to the
+queue behind it. Refinement happens in Jira comments; re-linking the queue is done by
+hand in Jira.
 
 The plugin reads your board and Confluence through the Atlassian MCP server and
-never writes to either — you file every ticket yourself, and that's deliberate.
+never writes to either — you file every ticket and create every page yourself, and
+that's deliberate.
 
 Exit questions are researched per ticket against the rubric
 (`plugins/spike-board/references/exit-question-rubric.md`); tracks live on the board
