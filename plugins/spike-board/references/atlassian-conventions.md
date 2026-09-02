@@ -16,8 +16,8 @@ and the mentor reviews what they file. The skill hands over paste-ready markdown
   `is blocked by` links. A draft without a destination gets misfiled.
 - **Proposed queues are board state, never conversation state.** Drafting ends with
   the mentee filing their whole proposed chain: the entry spike at full standard,
-  the follow-ons as stubs (title, goal, epic, link — *Stub — drafted when it
-  unlocks*), sequenced with `is blocked by` links. There is no separate proposal
+  the follow-ons as stubs (title, goal, epic, link — *Stub — drafted when the
+  spike ahead is finished*), sequenced with `is blocked by` links. There is no separate proposal
   artifact — never park a track proposal in a description, comment, or chat. The
   mentor's review of the filed tickets is the agreement step; refinement happens in
   ticket comments and the mentee revises the description by hand. **Filing doesn't
@@ -29,10 +29,17 @@ and the mentor reviews what they file. The skill hands over paste-ready markdown
   links it.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
-- **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
-  There is **no Backlog status** on this board — the queue lives in To Do, ordered by
-  `is blocked by` links. The next-up spike is the mentee's To Do ticket with no
-  unresolved blockers; everything behind it is queued.
+- **Workflow:** To Do → In Progress → In Review (finished, next spike drafted,
+  awaiting presentation) → Done. There is **no Backlog status** on this board — the
+  queue lives in To Do, ordered by `is blocked by` links. The next-up spike is the
+  mentee's To Do ticket with no unresolved blockers; everything behind it is queued.
+- **Next spike drafted before In Review.** Moving a spike to In Review requires the
+  stub behind it already drafted to full standard and pasted over on the board for
+  the mentor to review. Finished work is the moment the next entry point is known,
+  and mentor review is periodic, so the draft goes up with the demo request: the
+  mentor refines it in comments before the presentation, and the mentee starts it
+  the day after passing. Drafting unlocks when the spike ahead is finished;
+  *starting* still waits for Done.
 - **Epics = topic tracks.** Every spike ticket belongs to the epic for its track
   (e.g., the Kafka track, the CI/CD track). Create a new epic only when starting a
   track that has none — name it after the topic. The epic *is* the track: when a
@@ -96,11 +103,14 @@ queries. To know where a mentee stands, query the board — never rely on memory
 side file:
 
 1. Their **Done** tickets → what's been completed (and which exit questions are behind them).
-2. Their **In progress / In review** ticket → the spike in flight (there should be at most one).
+2. Their **In progress / In review** ticket → the spike in flight (there should be at
+   most one). An In Review spike must already have the stub behind it drafted; if
+   that stub is still a stub, the draft is overdue — say so.
 3. Their remaining **To Do** tickets, ordered by `is blocked by` chains → the planned
    path; the unblocked head of the chain is next up. Tickets still marked *Pending
    refinement* are proposals, not next-up, even when unblocked; tickets marked
-   *Stub* get drafted to full standard when they become next-up.
+   *Stub* get drafted to full standard when the spike ahead of them is finished —
+   before that spike moves to In Review, never after the demo.
 4. Ticket **comments** → refinement history, progress notes, dead ends, review feedback.
 
 **Template mechanics:** the ``` fences around a template in SKILL.md delimit it for

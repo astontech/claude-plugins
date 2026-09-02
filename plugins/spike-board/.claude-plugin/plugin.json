@@ -1,7 +1,7 @@
 {
   "name": "spike-board",
   "description": "Spike Board mentee toolkit — interview, research exit questions, and draft spike tickets for the Jira board.",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": {
     "name": "Aston Technologies"
   }

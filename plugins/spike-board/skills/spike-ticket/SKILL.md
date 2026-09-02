@@ -7,7 +7,7 @@ description: Interview a mentee about a technology or skill they want to learn, 
 
 You are helping a mentee on the Spike Board program draft a spike ticket. A spike is a time-boxed investigation that closes a specific gap in their knowledge, ending in a presentation to their peer group. Your job is to interview them briefly, scope the spike correctly, and produce a ticket for the Jira board — plus the stubs of the spikes that follow it.
 
-This is the program's only skill. Drafting a first path, adding a parallel topic, drafting the next queued ticket when it unlocks, and closing a gap that cuts in line all run through it. Everything after drafting — filing, refining in comments, re-linking the queue — happens in Jira by hand: the ticket you produce is a **draft for refinement**, reviewed by the mentor in ticket comments before it enters a sprint. Aim for a strong, honest draft, and never present the ticket as final or the queue as approved.
+This is the program's only skill. Drafting a first path, adding a parallel topic, drafting the next queued ticket when the spike ahead of it is finished, and closing a gap that cuts in line all run through it. Everything after drafting — filing, refining in comments, re-linking the queue — happens in Jira by hand: the ticket you produce is a **draft for refinement**, reviewed by the mentor in ticket comments before it enters a sprint. Aim for a strong, honest draft, and never present the ticket as final or the queue as approved.
 
 ## Rules of the program (these shape every ticket)
 
@@ -51,12 +51,12 @@ Here's where you are: ⟨either `KEY — title` is in ⟨STATUS⟩, or: nothing 
 
 Is this spike the **next step on that path**, or **something new**?
 
-- **Next step** — ⟨next-up KEY⟩ is next. ⟨It's a stub, so I'll draft it to full standard now — say "next step" and we go. | It's already drafted; any tightening happens in its comments with your mentor. Nothing to draft here.⟩
+- **Next step** — ⟨next-up KEY⟩ is next. ⟨It's a stub, so I'll draft it to full standard now — it has to be on the board before ⟨in-flight KEY⟩ moves to In Review. Say "next step" and we go. | It's already drafted; any tightening happens in its comments with your mentor. Nothing to draft here.⟩
 - **Something new that changes the path or cuts in line** — tell me the gap: what can't you do that the path assumed you could? One sentence. I'll draft the spike that closes it and show what happens to the queue behind it.
 - **A parallel topic that leaves your chain alone** — tell me the topic and where you are with it today — a specific thing you can't do yet, or simply that you've never used it — and I'll draft it here. You'll file it as a proposed chain; where it sits against your current queue is your mentor's call at refinement.
 ```
 
-If they answer *next step* and the ticket is already drafted, say so in one sentence and stop — the interview is over. If it's a stub, continue to Step 2 with that ticket's topic and step; the ticket you produce replaces the stub's description (see **Filing**). If they answer *something new*, this is a pivot — read **When a spike cuts in line** before continuing. If they answer *parallel topic*, continue to Step 2.
+If they answer *next step* and the ticket is already drafted, say so in one sentence and stop — the interview is over. If it's a stub, continue to Step 2 with that ticket's topic and step; the ticket you produce replaces the stub's description (see **Filing**). Stubs are drafted when the spike ahead of them is finished: the program requires the next ticket drafted and on the board before a spike moves to In Review, so the mentor refines it in comments before the demo and the mentee starts it the day after passing. If the in-flight spike is already In Review and its successor is still a stub, the draft is overdue — say so in the one sentence before the opener. If they answer *something new*, this is a pivot — read **When a spike cuts in line** before continuing. If they answer *parallel topic*, continue to Step 2.
 
 **Template C — only Done tickets** (nothing in flight, nothing queued):
 
@@ -168,7 +168,7 @@ Then print the Confluence page skeleton from the conventions in two or three lin
 
 ## Filing the queue
 
-The proposal is filed, not narrated. After the entry ticket, list the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs. Each follow-on is a **stub**, not a draft: title (same convention), one-sentence goal, epic, its `is blocked by` link, and the line *Stub — drafted when it unlocks.* Don't write exit questions, fences, or demos for stubs; that happens in a fresh interview when the ticket unblocks (Template B's *next step*). Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
+The proposal is filed, not narrated. After the entry ticket, list the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs. Each follow-on is a **stub**, not a draft: title (same convention), one-sentence goal, epic, its `is blocked by` link, and the line *Stub — drafted when the spike ahead is finished.* Don't write exit questions, fences, or demos for stubs; that happens in a fresh interview when the spike ahead of it is finished, before that spike moves to In Review (Template B's *next step*). Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
 
 The mentee files the whole chain as real tickets: entry spike at the head, each stub `is blocked by` the one before it, each under its topic's epic.
 

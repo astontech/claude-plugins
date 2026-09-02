@@ -39,7 +39,8 @@ If the connection ever breaks, re-run `/mcp` → `atlassian` → Authenticate.
 Toolkit for the Spike Board mentee program: one skill, `spike-ticket`, over the
 shared Jira board. It interviews you about a gap, researches exit questions for the
 topic against the rubric, and hands you a paste-ready ticket plus stubs for the
-spikes behind it. The same skill drafts a queued stub when it becomes next-up, and
+spikes behind it. The same skill drafts the next queued stub when the spike ahead of it
+is finished — a spike doesn't move to In Review until its successor is drafted — and
 drafts the gap spike when something has to cut in line. Refinement happens in Jira
 comments; re-linking the queue is done by hand in Jira.
 
