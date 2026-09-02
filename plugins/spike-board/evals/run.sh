@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # spike-board eval runner — see README.md
 set -u
+export LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8   # multibyte-safe grep: ⟨ ⟩ — → must not match byte-wise
 HERE="$(cd "$(dirname "$0")" && pwd)"
 CASES="$HERE/cases"
 OUT="$HERE/out"; mkdir -p "$OUT"
