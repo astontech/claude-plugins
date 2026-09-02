@@ -162,7 +162,7 @@ The title must name the specific skill, never just the technology: `Spike: Kafka
 
 ## Filing
 
-The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira. Then, **outside the ticket text**, send **Template F** — the filing and documentation instructions. One fact per line, in this order, nothing joined into a sentence. Use what the board load found for the epic and the Confluence folder (conventions, **Reading a mentee's state**, item 5).
+The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira. Then, **outside the ticket text**, send **Template G** — the filing and documentation instructions. One fact per line, in this order, nothing joined into a sentence. Use what the board load found for the epic and the Confluence folder (conventions, **Reading a mentee's state**, item 5).
 
 ```
 **Filing**
@@ -186,7 +186,28 @@ Drop the *Also link* line when no existing ticket needs re-linking; never pad it
 
 ## Filing the queue
 
-The proposal is filed, not narrated. After the entry ticket, list the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs. Each follow-on is a **stub**, not a draft: title (same convention), one-sentence goal, epic, its `is blocked by` link, and the line *Stub — drafted when the spike ahead is finished.* Don't write exit questions, fences, or demos for stubs; that happens in a fresh interview when the spike ahead of it is finished, before that spike moves to In Review (Template B's *next step*). Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
+The proposal is filed, not narrated. After Template G, send **Template S** — the 2–4 spikes that would follow the entry ticket in the topic: the remaining steps from the research step when the topic split, otherwise the natural next rungs. Each follow-on is a **stub**, not a draft. Don't write exit questions, fences, or demos for stubs; that happens in a fresh interview when the spike ahead of it is finished, before that spike moves to In Review (Template B's *next step*). One fact per line, same shape for every stub, nothing joined into a sentence.
+
+```
+**The queue behind it** — ⟨N⟩ stubs under the ⟨topic⟩ epic⟨ (create it, there isn't one yet)⟩. File each as a To Do ticket, assignee you, with the description below.
+
+**1. Spike: ⟨topic⟩ — ⟨specific skill⟩**
+- Goal: ⟨one sentence⟩
+- Epic: ⟨topic⟩
+- Blocked by: ⟨the entry spike above | stub ⟨n−1⟩⟩
+- Requires: ⟨cross-topic prerequisite spike, e.g. Docker spike⟩
+- Description: Stub — drafted when the spike ahead is finished.
+
+**2. Spike: ⟨topic⟩ — ⟨specific skill⟩**
+- Goal: …
+- Epic: …
+- Blocked by: …
+- Description: Stub — drafted when the spike ahead is finished.
+
+⟨Your current chain ⟨KEY → KEY⟩ stays where it is — nothing links this one to it, because there's no prerequisite between them. | This chain's head is blocked by ⟨KEY⟩ — a real prerequisite.⟩ Filing this proposes it; your mentor decides at refinement when it runs.
+```
+
+Drop the *Requires* line when there is no cross-topic prerequisite; never pad it. The closing line appears only when the mentee already has a path (Template B); for a first spike (Template A or C), end after the last stub. Titles follow the same convention as the entry ticket — the specific skill, never just the technology.
 
 The mentee files the whole chain as real tickets: entry spike at the head, each stub `is blocked by` the one before it, each under its topic's epic.
 
