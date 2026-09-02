@@ -75,7 +75,7 @@ Wait for their answer. If they gave a topic but nothing about where they are wit
 Run the research step in `exit-question-rubric.md` silently: official docs' concepts index plus one reputable curriculum, candidates from their overlap, the depth level, a step split if the topic is bigger than one spike, prerequisites, 4–6 questions that each pass the six-point rubric, sources kept for the ticket. Never draft from memory alone, and pitch at the rung above where the mentee is (the rubric's floor rule). Then send **Template D**:
 
 ```
-Here are the exit questions for ⟨Topic⟩ — ⟨Working | Aware⟩ level, consumer-not-operator, drawn from the official docs and a standard curriculum⟨. It's bigger than one spike, so it's ⟨N⟩ steps; these are step 1, ⟨step title⟩⟩:
+Here are the exit questions for ⟨Topic⟩ — ⟨Working | Aware⟩ level, consumer-not-operator, drawn from the official docs and ⟨the curriculum you used, by name⟩⟨. It's bigger than one spike, so it's ⟨N⟩ steps; these are step 1, ⟨step title⟩⟩:
 
 1. ⟨question⟩
 2. ⟨question⟩
