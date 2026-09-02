@@ -24,7 +24,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its *
 
 **Load silently.** The mentee's first visible output from you is the Step 1 template — optionally preceded by one sentence naming a board hygiene problem, nothing else. Never narrate the setup: not the marker check, not who you decided the mentee is, not "loading your board", not what tools you called. If you find yourself writing a sentence about how you know who they are, delete it.
 
-Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md` and `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md` now — the interview pastes from both.
+Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, and `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md` now — the interview pastes from the first two and drafts by the third.
 
 ## The interview — a fixed ladder
 
@@ -41,7 +41,7 @@ Pick exactly one template from what the board said. Where a template calls for t
 ```
 Your board is empty, so this is your first spike.
 
-**1. What do you want to learn, and what can't you do today because of it?** One concrete sentence — "I can't follow the PRs that touch our Kafka listeners" is usable; "I want to learn Kafka" isn't. Your sentence becomes the ticket's Gap section.
+**1. What do you want to learn, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section.
 
 **2. Pick a topic from the catalog, or name something else.** Catalog topics come with locked exit questions.
 
@@ -57,7 +57,7 @@ Is this spike the **next step on that path**, or **something new**?
 
 - **Next step** — ⟨next-up KEY⟩ is already drafted. Run `/spike-board:spike-refine ⟨KEY⟩` to tighten it; I won't write a duplicate here.
 - **Something new that changes the path or cuts in line** — that's a pivot. Run `/spike-board:spike-pivot` and it will reconcile the queue.
-- **A parallel topic that leaves your chain alone** — tell me the topic and one concrete sentence on what you can't do today because of it, and I'll draft it here. You'll file it as a proposed chain; where it sits against your current queue is your mentor's call at refinement.
+- **A parallel topic that leaves your chain alone** — tell me the topic and where you are with it today — a specific thing you can't do yet, or simply that you've never used it — and I'll draft it here. You'll file it as a proposed chain; where it sits against your current queue is your mentor's call at refinement.
 ```
 
 If they answer *next step* or *pivot*, hand off with one sentence and stop — the interview is over. If they answer *parallel topic*, continue to Step 2.
@@ -67,14 +67,16 @@ If they answer *next step* or *pivot*, hand off with one sentence and stop — t
 ```
 You've finished ⟨N⟩ spike⟨s⟩: ⟨KEY — title, one per line⟩. Nothing is in flight or queued, so this is a fresh start.
 
-**1. What do you want to learn next, and what can't you do today because of it?** One concrete sentence — "I can't follow the PRs that touch our Kafka listeners" is usable; "I want to learn Kafka" isn't. Your sentence becomes the ticket's Gap section.
+**1. What do you want to learn next, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section.
 
 **2. Pick a topic from the catalog, or name something else.** Natural next steps from what you've finished: ⟨the catalog's next track step or dependent topics for each Done topic, comma-separated⟩. Catalog topics come with locked exit questions.
 
 ⟨catalog menu block⟩
 ```
 
-Wait for their answer. If they gave a topic but no gap sentence, or a gap but no topic, ask only for the missing half in one sentence — don't re-send the template.
+Wait for their answer. If they gave a topic but nothing about where they are with it, or the reverse, ask only for the missing half in one sentence — don't re-send the template.
+
+**Take the gap as given. Ask once, never probe.** "I've never used it" / "I know nothing about it" is a complete, acceptable gap — the most common one for a first spike. Don't push for a more specific can't-do sentence, don't ask what they'd want to do with it, don't ask for context. Write the Gap as *"I've never used ⟨topic⟩ and can't read or contribute to code that touches it,"* set the entry point at step 1 (or every question, for an untracked topic), and move to Step 2. A specific gap, when they volunteer one, is simply used as written.
 
 ### Step 2 — Self-assessment against the exit questions
 
@@ -94,10 +96,10 @@ Which of these could you answer confidently right now? Give me the numbers. For 
 
 For a tracked topic, show one step at a time, starting at step 1; if they clear every question in a step, re-send Template D for the next step. The entry point is the first step with questions they can't answer.
 
-**Template E — off-catalog topic:**
+**Template E — off-catalog topic.** Before sending it, run the research step in `exit-question-rubric.md` silently: official docs' concepts index plus one reputable curriculum, candidates from their overlap, 4–6 questions that each pass the six-point rubric, sources kept for the promotion note. Never draft from memory alone. Then:
 
 ```
-⟨Topic⟩ isn't in the catalog, so these are draft exit questions in the catalog's style — Working level, consumer-not-operator. I'll flag them to your mentor for promotion into the catalog.
+⟨Topic⟩ isn't in the catalog, so these are draft exit questions in the catalog's style — Working level, consumer-not-operator, drawn from the official docs and a standard curriculum. I'll flag them to your mentor for promotion into the catalog.
 
 1. ⟨question⟩
 2. ⟨question⟩
@@ -186,7 +188,7 @@ Show the mentee the finished draft first, then offer to file it. If the `atlassi
 
 ## Filing the queue
 
-The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the catalog's track when one exists (one step per ticket, verbatim questions), otherwise a proposed sequence in the same shape (flag drafted questions for catalog promotion). Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
+The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the catalog's track when one exists (one step per ticket, verbatim questions), otherwise a proposed sequence in the same shape (flag drafted questions for catalog promotion). Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`). For an off-catalog topic, end your last message with the promotion-note block from `exit-question-rubric.md` — sources included — and tell the mentee to paste it under the entry ticket's Progress notes so the mentor finds it at refinement.
 
 The mentee files the whole chain as real tickets: entry spike at the head, each follow-on `is blocked by` the one before it, each under its topic's epic.
 
