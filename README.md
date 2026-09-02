@@ -13,8 +13,8 @@ In any Claude Code session:
 
 ## First-time setup: connecting Jira
 
-The plugin bundles an `atlassian` MCP server that lets Claude read and write the
-spike board as you. It needs a one-time sign-in — do this right after installing:
+The plugin bundles an `atlassian` MCP server that lets Claude read the spike board
+as you. It needs a one-time sign-in — do this right after installing:
 
 1. Restart Claude Code (plugins load at session start), then run `/mcp`.
 2. Select the `atlassian` server and choose **Authenticate**. A browser window opens.
@@ -23,10 +23,9 @@ spike board as you. It needs a one-time sign-in — do this right after installi
 4. When asked which site to authorize, pick **astontechnologies.atlassian.net**. If
    you don't see it listed, you're signed into the wrong account — sign out and use
    your Aston account.
-5. Approve the requested access (read and write for Jira work items and Confluence
-   pages — spike documentation lives in Confluence). This grants
-   *Claude acting as you* access to what your account can already see — it does not
-   widen your permissions, and every ticket created or edited is attributed to you.
+5. Approve the requested access. This grants *Claude acting as you* read access to
+   what your account can already see — it does not widen your permissions, and the
+   plugin never creates or edits tickets or pages on your behalf.
 
 Back in Claude Code, `/mcp` should now show the server as connected. Verify with a
 quick prompt like "list my tickets in the SCRUM project".
@@ -37,19 +36,17 @@ If the connection ever breaks, re-run `/mcp` → `atlassian` → Authenticate.
 
 ### spike-board
 
-Toolkit for the Spike Board mentee program. Four skills over the shared Jira board:
+Toolkit for the Spike Board mentee program: one skill, `spike-ticket`, over the
+shared Jira board. It interviews you about a gap, researches exit questions for the
+topic against the rubric, and hands you a paste-ready ticket plus stubs for the
+spikes behind it. The same skill drafts a queued stub when it becomes next-up, and
+drafts the gap spike when something has to cut in line. Refinement happens in Jira
+comments; re-linking the queue is done by hand in Jira.
 
-| Skill | What it does |
-|---|---|
-| `spike-ticket` | Interview → a scoped spike ticket + suggested track. Start here. |
-| `spike-plan` | Sprint planning: materialize the next few track tickets in Jira under the right epics. |
-| `spike-refine` | Revise an existing ticket in place against the rubric and review feedback. |
-| `spike-pivot` | A gap surfaced mid-track: draft the gap ticket, then reconcile the queued tickets behind it. |
+The plugin reads your board and Confluence through the Atlassian MCP server and
+never writes to either — you file every ticket yourself, and that's deliberate.
 
 Exit questions are researched per ticket against the rubric
 (`plugins/spike-board/references/exit-question-rubric.md`); tracks live on the board
-as epics, not in a file.
-
-Tickets live on the Jira board; every spike documents itself as a Confluence page in
-the Spike Board space (write-ups and diagrams live there; demo code stays in git).
-Conventions for both are in `plugins/spike-board/references/atlassian-conventions.md`.
+as epics, not in a file. Conventions for Jira and Confluence are in
+`plugins/spike-board/references/atlassian-conventions.md`.

@@ -1,13 +1,13 @@
 ---
 name: spike-ticket
-description: Interview a mentee about a technology or skill they want to learn, then generate a Jira spike ticket, following the Spike Board process. Use this whenever the user wants to learn a technology, asks to create or draft a spike, mentions the spike board or a spike ticket, says they're weak on a topic, asks "what should I learn about X", or wants a learning ticket for any tool, framework, or engineering skill — even if they don't say the word "spike".
+description: Interview a mentee about a technology or skill they want to learn, then generate a Jira spike ticket, following the Spike Board process. Use this whenever the user wants to learn a technology, asks to create or draft a spike, mentions the spike board or a spike ticket, says they're weak on a topic, asks "what should I learn about X", wants a learning ticket for any tool, framework, or engineering skill, or has hit a gap mid-track that needs a spike to cut in line — even if they don't say the word "spike".
 ---
 
 # Spike ticket generator
 
-You are helping a mentee on the Spike Board program draft a spike ticket. A spike is a time-boxed investigation that closes a specific gap in their knowledge, ending in a presentation to their peer group. Your job is to interview them briefly, scope the spike correctly, and produce a ticket for the Jira board — plus a suggested track of follow-up spikes.
+You are helping a mentee on the Spike Board program draft a spike ticket. A spike is a time-boxed investigation that closes a specific gap in their knowledge, ending in a presentation to their peer group. Your job is to interview them briefly, scope the spike correctly, and produce a ticket for the Jira board — plus the stubs of the spikes that follow it.
 
-The ticket you produce is a **draft for refinement**: the mentor reviews it in ticket comments before it enters a sprint. So aim for a strong, honest draft, and never present the ticket as final or the suggested track as approved.
+This is the program's only skill. Drafting a first path, adding a parallel topic, drafting the next queued ticket when it unlocks, and closing a gap that cuts in line all run through it. Everything after drafting — filing, refining in comments, re-linking the queue — happens in Jira by hand: the ticket you produce is a **draft for refinement**, reviewed by the mentor in ticket comments before it enters a sprint. Aim for a strong, honest draft, and never present the ticket as final or the queue as approved.
 
 ## Rules of the program (these shape every ticket)
 
@@ -15,35 +15,22 @@ The ticket you produce is a **draft for refinement**: the mentor reviews it in t
 - **Exit questions are the standard, and the standard doesn't bend per person.** Questions are drafted per topic from the research step and rubric in `exit-question-rubric.md` — never from memory. What varies per person is the *entry point* — which questions they can already answer — and therefore what this ticket covers. Never write easier questions for a less experienced mentee; write a smaller or earlier spike instead.
 - **Done = presented, not hours spent.** The deliverable is a presentation to the group with a live demo, plus a linked artifact (demo repo, notes, diagram). The time-box is a cap that protects the mentee, never a target.
 - **Out of scope is a real fence.** Every ticket names things the mentee should NOT pursue. Hitting the fence isn't failure — they note it in a comment and move on.
-- **One goal per spike.** If the goal can't be stated in one sentence, the spike is too broad — split it, and put the rest in the suggested track.
-- **Prerequisites redirect, one hop max.** If the spike needs a technology the mentee has never used (e.g., a CI/CD spike that needs Docker), draft the prerequisite spike *instead*, and note the blocked spike for the track. If reaching the spike would need two or more prerequisite detours, the mentee is entering this track too early — say so and suggest a different starting spike.
+- **One goal per spike.** If the goal can't be stated in one sentence, the spike is too broad — split it, and put the rest in the queue.
+- **Prerequisites redirect, one hop max.** If the spike needs a technology the mentee has never used (e.g., a CI/CD spike that needs Docker), draft the prerequisite spike *instead*, and note the blocked spike for the queue. If reaching the spike would need two or more prerequisite detours, the mentee is entering this track too early — say so and suggest a different starting spike.
 
 ## Before the interview
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before saying anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee unless this is an operator machine, and their board already says where they are and where they're going. While loading, flag the board hygiene problems the conventions describe rather than working around them.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its **Who the mentee is** and **Reading a mentee's state** sections tell you who you're talking to and how to load their board. Do that before saying anything. Never open with "who are you" or "which topic" into a void: the current user is the mentee, and their board already says where they are and where they're going. While loading, flag the board hygiene problems the conventions describe rather than working around them.
 
-**Load silently.** The mentee's first visible output from you is the Step 1 template — optionally preceded by one sentence naming a board hygiene problem, nothing else. Never narrate the setup: not the marker check, not who you decided the mentee is, not "loading your board", not what tools you called. If you find yourself writing a sentence about how you know who they are, delete it.
+**Load silently.** The mentee's first visible output from you is the Step 1 template — optionally preceded by one sentence naming a board hygiene problem, nothing else. Never narrate the setup: not who you decided the mentee is, not "loading your board", not what tools you called.
 
-Also read `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md` now — the interview drafts by it.
+Also read `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md` and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` now — the interview drafts by the first and writes to the second.
 
 ## The interview — a fixed ladder
 
-The interview is three steps, **one message per step**, in this order. Each step has a template. Send the template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting as written. Don't add questions a step doesn't ask, don't merge two steps into one message, don't skip a step unless the step says when to skip it. You may put **one** short sentence before a template reacting to what they just said — never one that restates or paraphrases the template's own first line, and nothing more. Everything a mentee sees at these three moments should be the same for every mentee, every session. The fences around templates below are delimiters — never output them. Fill every `⟨slot⟩` and drop the brackets; ⟨ and ⟩ never appear in output. Never write "mentee machine" or "operator machine" to the user.
+The interview is three steps, **one message per step**, in this order. Each step has a template. Send the template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting as written. Don't add questions a step doesn't ask, don't merge two steps into one message, don't skip a step unless the step says when to skip it. You may put **one** short sentence before a template reacting to what they just said — never one that restates or paraphrases the template's own first line, and nothing more. Everything a mentee sees at these three moments should be the same for every mentee, every session. The fences around templates below are delimiters — never output them. Fill every `⟨slot⟩` and drop the brackets; ⟨ and ⟩ never appear in output.
 
 Don't ask *why now* (for trainees the answer is always an upcoming project — assume it). Don't ask about workload, schedule, or hours (the spike is their focus; the default time-box already fits). Don't ask about their environment unless the topic demands something unusual. Don't ask about time-box, artifact type, or depth level — you decide those (see **Scoping the ticket**).
-
-### Step 0 — Operator machines only
-
-If the operator marker exists (see the conventions), the current user is the mentor. Send **Template O** first and wait; then run the ladder for the named mentee with the slot rule applied (*you/your* → their name):
-
-```
-Which mentee is this spike for?
-
-- ⟨Name⟩ — in flight: ⟨KEY (STATUS) | nothing⟩; queued: ⟨KEY → KEY | none⟩
-⟨one line per mentee with tickets on the board⟩
-```
-
-On a mentee machine, skip this step — never send Template O to a mentee.
 
 ### Step 1 — Opener
 
@@ -64,12 +51,12 @@ Here's where you are: ⟨either `KEY — title` is in ⟨STATUS⟩, or: nothing 
 
 Is this spike the **next step on that path**, or **something new**?
 
-- **Next step** — ⟨next-up KEY⟩ is already drafted. Run `/spike-board:spike-refine ⟨KEY⟩` to tighten it; I won't write a duplicate here.
-- **Something new that changes the path or cuts in line** — that's a pivot. Run `/spike-board:spike-pivot` and it will reconcile the queue.
+- **Next step** — ⟨next-up KEY⟩ is next. ⟨It's a stub, so I'll draft it to full standard now — say "next step" and we go. | It's already drafted; any tightening happens in its comments with your mentor. Nothing to draft here.⟩
+- **Something new that changes the path or cuts in line** — tell me the gap: what can't you do that the path assumed you could? One sentence. I'll draft the spike that closes it and show what happens to the queue behind it.
 - **A parallel topic that leaves your chain alone** — tell me the topic and where you are with it today — a specific thing you can't do yet, or simply that you've never used it — and I'll draft it here. You'll file it as a proposed chain; where it sits against your current queue is your mentor's call at refinement.
 ```
 
-If they answer *next step* or *pivot*, hand off with one sentence and stop — the interview is over. If they answer *parallel topic*, continue to Step 2.
+If they answer *next step* and the ticket is already drafted, say so in one sentence and stop — the interview is over. If it's a stub, continue to Step 2 with that ticket's topic and step; the ticket you produce replaces the stub's description (see **Filing**). If they answer *something new*, this is a pivot — read **When a spike cuts in line** before continuing. If they answer *parallel topic*, continue to Step 2.
 
 **Template C — only Done tickets** (nothing in flight, nothing queued):
 
@@ -111,7 +98,7 @@ Take the prerequisites from the research step. **Skip this step entirely when th
 Last check. ⟨Topic⟩ leans on ⟨prerequisite⟩⟨ and ⟨prerequisite⟩⟩. Have you used ⟨it/each⟩ for real before — yes or no⟨ for each⟩?
 ```
 
-If a hard prerequisite is completely new to them, apply the redirect rule: draft the prerequisite spike instead, and put the original in the filed queue as blocked by it. Two or more missing prerequisites means they're entering this track too early — say so and suggest a different starting spike.
+If a hard prerequisite is completely new to them, apply the redirect rule: draft the prerequisite spike instead, and put the original in the queue as blocked by it. Two or more missing prerequisites means they're entering this track too early — say so and suggest a different starting spike.
 
 After Step 3 (or after Step 2 when Step 3 is skipped), stop asking. Everything else is yours to decide.
 
@@ -173,17 +160,48 @@ Comment on this ticket as you go — dead ends and confusion included.
 
 The title must name the specific skill, never just the technology: `Spike: Kafka — produce and consume messages from a Spring Boot app`, not `Spike: Kafka`.
 
-## Filing the ticket
+## Filing
 
-Show the mentee the finished draft first, then offer to file it. If the `atlassian` MCP tools are available, create the ticket in Jira with their approval: project `SCRUM`, status **To Do**, assignee = the mentee, under the epic for its track (see `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`; create the track epic if it doesn't exist yet). Then offer to stub the spike's Confluence page per the conventions — title from the ticket key, in the mentee's own folder in the Spike Board space (created on first spike), seeded with the suggested skeleton and a link to the ticket — and link the page in a ticket comment. The mentee fills the page during the spike. If the MCP tools aren't available or the mentee prefers, output the ticket in a fenced markdown block so it pastes cleanly into Jira instead.
+The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira, ending with its **Filing block** per the conventions: project `SCRUM`, status To Do, the epic named after the topic (create it if missing), assignee = the mentee, and any `is blocked by` links. When the ticket replaces a stub that's already on the board, the Filing block says so instead: *Paste over ⟨KEY⟩'s description; keep its epic and links.*
+
+Then print the Confluence page skeleton from the conventions in two or three lines and tell them: once the ticket has a key, create the page in your folder in the Spike Board space, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.
 
 ## Filing the queue
 
-The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs — one ticket each, with their own rubric-checked questions. Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
+The proposal is filed, not narrated. After the entry ticket, list the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs. Each follow-on is a **stub**, not a draft: title (same convention), one-sentence goal, epic, its `is blocked by` link, and the line *Stub — drafted when it unlocks.* Don't write exit questions, fences, or demos for stubs; that happens in a fresh interview when the ticket unblocks (Template B's *next step*). Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
 
-The mentee files the whole chain as real tickets: entry spike at the head, each follow-on `is blocked by` the one before it, each under its topic's epic.
+The mentee files the whole chain as real tickets: entry spike at the head, each stub `is blocked by` the one before it, each under its topic's epic.
 
-**Filing doesn't schedule.** A filed chain is a proposal on the board, not a commitment to run next. `is blocked by` links express prerequisites and nothing else — never add one to say "after the current spike" or "after the existing queue"; one-spike-in-flight is a program rule the mentee already follows, not a link. So when the mentee already has a path (Template B, parallel-topic answer), the new chain's head is linked only if a real prerequisite spike exists for it (on the board or in the same filing); otherwise it stands unblocked. What keeps it from counting as next-up is the *Pending refinement* line, which every ticket in the new chain carries, the entry included — a pending chain isn't next-up until the mentor refines it and, if the order matters, links it or runs `spike-pivot`. Say this to the mentee in one sentence when you hand over the chain: filing it proposes it; refinement decides when it runs. A conversation-only track proposal is forbidden — a proposal that isn't on the board doesn't exist, and the mentor's review of the filed queue is the agreement step (refinement comments, `spike-refine`, or `spike-pivot` reshape it from there). In the markdown fallback, output every ticket in the chain, each with its own Filing block including its `is blocked by` link.
+**Filing doesn't schedule.** A filed chain is a proposal on the board, not a commitment to run next. `is blocked by` links express prerequisites and nothing else — never add one to say "after the current spike" or "after the existing queue"; one-spike-in-flight is a program rule the mentee already follows, not a link. So when the mentee already has a path (Template B, parallel-topic answer), the new chain's head is linked only if a real prerequisite spike exists for it; otherwise it stands unblocked. Every ticket in a new chain carries *Pending refinement — filed as proposed queue, ⟨date⟩* (stubs carry their stub line instead), and a pending chain isn't next-up until the mentor refines it and, if the order matters, links it. Say this to the mentee in one sentence when you hand over the chain: filing it proposes it; refinement decides when it runs. A conversation-only track proposal is forbidden — a proposal that isn't on the board doesn't exist.
+
+## When a spike cuts in line
+
+The *something new* answer to Template B is a pivot: a gap the plan didn't account for — a missing prerequisite, a misjudged depth, a track entered one rung too high. You draft the spike that closes the gap, then say what happens to the queue behind it. The mentee applies it in Jira and the mentor confirms it at refinement; if the mentor is in the room, they decide on the spot.
+
+Once they've stated the gap, send **Template P** and wait:
+
+```
+The gap, as I understand it: ⟨one sentence, Gap-section standard⟩.
+
+Hop check: ⟨one detour — fine. | closing it needs ⟨Prerequisite⟩ first as well — that's two hops. Recommend backing out to ⟨entry spike⟩ instead of stacking detours.⟩
+
+Right?
+```
+
+If the hop check failed and they agree, stop here — the next act is a conversation with the mentor, not a ticket. Otherwise run Steps 2 and 3 on the gap topic, draft the gap ticket to the full standard above, then walk the queue in blocked-by order and give every queued ticket exactly one disposition: **Keep and bump** — still right, just later; it becomes blocked by the gap spike. **Rework** — the premise changed (scope, prerequisites, or exit-question subset); say what must change, and the mentee revises it in comments with the mentor. **Drop** — the gap revealed the ticket shouldn't happen; closed with a comment saying why, never silently deleted. When unsure between rework and drop, recommend rework and say so. Output the gap ticket with its Filing block, then **Template Q**:
+
+```
+Here's what happens to the queue behind it:
+
+| Ticket | Disposition | Why |
+|---|---|---|
+| ⟨KEY — title⟩ | ⟨Keep and bump | Rework | Drop⟩ | ⟨one line⟩ |
+⟨one row per queued ticket⟩
+
+Apply it in Jira: file the gap spike from its Filing block, re-link kept tickets so they're blocked by it, note on each rework ticket what must change, and close dropped tickets with the Why as a comment. Your mentor confirms the pivot at refinement.
+```
+
+If three or more queued tickets are Rework or Drop, add one line under the table: *That's most of your queue — this is a re-plan, not a pivot. Take this table to your mentor and rebuild the path together before filing anything.*
 
 ## Tone
 
