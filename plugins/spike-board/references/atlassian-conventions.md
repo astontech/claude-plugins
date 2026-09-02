@@ -115,6 +115,23 @@ rely on memory or a side file:
    refinement* are proposals, not next-up, even when unblocked.
 4. Ticket **comments** → refinement history, progress notes, dead ends, review feedback.
 
+When a skill shows the mentee their board (`spike-plan`, `spike-pivot`, and
+`spike-refine` when no ticket was named), it pastes this block — **Template S** —
+with only the slots filled, never a free-form summary:
+
+```
+⟨Your | ⟨Name⟩'s⟩ board:
+- Done: ⟨KEY — title; KEY — title | nothing yet⟩
+- In flight: ⟨KEY — title (STATUS) | nothing⟩
+- Queued: ⟨KEY → KEY → KEY | nothing⟩
+⟨Hygiene: ⟨one line per problem⟩ — omit the line entirely when the board is clean⟩
+```
+
+**Slot rule for every template in every skill:** on a mentee machine the templates
+say *you / your*. On an operator machine, after the mentor names the mentee, replace
+*you / your* with the mentee's first name / *⟨Name⟩'s* throughout — nothing else in
+the template changes.
+
 While reading, flag board hygiene problems rather than planning around them: spike
 tickets with no epic parent, and queued tickets with no `is blocked by` links (an
 unlinked queue has no next-up signal). Offer to fix them before proceeding.

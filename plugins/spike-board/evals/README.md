@@ -1,0 +1,36 @@
+# spike-board evals — template-drift regression
+
+Operator-only tooling. Runs the plugin's skills headlessly and asserts the fixed
+templates appear (and setup narration doesn't). A failing case means a skill
+drifted from its ladder — or a reference the templates paste from changed.
+
+## Preconditions
+
+- The installed plugin (`claude plugin update spike-board@astontech`) at the version
+  under test — cases run against the install, not the working tree.
+- Atlassian MCP OAuth valid for the current user.
+- Board fixtures: the current user holds a chain — one In Progress ticket and at
+  least two queued To Do tickets linked `is blocked by` (as of 2026-09-01: SCRUM-22 →
+  SCRUM-23 → SCRUM-24, label `test-fixture`). Cases marked `needs: chain` depend on
+  it. Set `SPIKE_EVAL_NEXT_KEY` to the queue head (default `SCRUM-23`).
+- Run from a directory **outside** `~/Projects` so no CLAUDE.md or auto-memory loads;
+  the runner does this for you (`~/mentee-sim`).
+
+## Run
+
+```bash
+plugins/spike-board/evals/run.sh                 # all cases
+plugins/spike-board/evals/run.sh ticket-midtrack # one case
+```
+
+Each case is `cases/<name>.env`: the prompt, `MARKER=on|off`, and newline-separated
+`MUST` / `MUST_NOT` regexes (extended, case-sensitive). The runner moves the operator
+marker to match, runs `claude -p`, greps the output, prints PASS/FAIL with the missed
+assertions, and restores the marker. Outputs land in `evals/out/` (git-ignored).
+
+## Adding a case
+
+Copy an existing `.env`. Assert on template text that should be stable across runs —
+a template's fixed sentence, a table header — never on free-text slots. Add a
+`MUST_NOT` for every kind of leak you've seen (setup narration, other mentees' names,
+operator mechanics).

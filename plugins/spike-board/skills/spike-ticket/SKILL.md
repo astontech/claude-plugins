@@ -28,9 +28,22 @@ Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md`, `${CLAUDE_PLUGIN_R
 
 ## The interview — a fixed ladder
 
-The interview is three steps, **one message per step**, in this order. Each step has a template. Send the template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting as written. Don't add questions a step doesn't ask, don't merge two steps into one message, don't skip a step unless the step says when to skip it. You may put **one** short sentence before a template reacting to what they just said — nothing more. Everything a mentee sees at these three moments should be the same for every mentee, every session.
+The interview is three steps, **one message per step**, in this order. Each step has a template. Send the template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting as written. Don't add questions a step doesn't ask, don't merge two steps into one message, don't skip a step unless the step says when to skip it. You may put **one** short sentence before a template reacting to what they just said — never one that restates or paraphrases the template's own first line, and nothing more. Everything a mentee sees at these three moments should be the same for every mentee, every session.
 
 Don't ask *why now* (for trainees the answer is always an upcoming project — assume it). Don't ask about workload, schedule, or hours (the spike is their focus; the default time-box already fits). Don't ask about their environment unless the topic demands something unusual. Don't ask about time-box, artifact type, or depth level — you decide those (see **Scoping the ticket**).
+
+### Step 0 — Operator machines only
+
+If the operator marker exists (see the conventions), the current user is the mentor. Send **Template O** first and wait; then run the ladder for the named mentee with the slot rule applied (*you/your* → their name):
+
+```
+Which mentee is this spike for?
+
+- ⟨Name⟩ — in flight: ⟨KEY (STATUS) | nothing⟩; queued: ⟨KEY → KEY | none⟩
+⟨one line per mentee with tickets on the board⟩
+```
+
+On a mentee machine, skip this step — never send Template O to a mentee.
 
 ### Step 1 — Opener
 
