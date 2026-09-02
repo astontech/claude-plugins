@@ -26,10 +26,12 @@ the home for spike documentation. All four skills read and write both through th
   with `is blocked by` links. There is no separate proposal artifact — never park
   a track proposal in a description, comment, or chat. The mentor's review of the
   filed tickets is the agreement step; `spike-refine` and `spike-pivot` reshape
-  from there. **Filing doesn't schedule:** a chain filed beside an existing path
-  has its head linked `is blocked by` the in-flight ticket (never the queue's
-  tail, never unblocked) and every ticket marked *Pending refinement*; its order
-  against the existing queue is the mentor's decision at refinement.
+  from there. **Filing doesn't schedule:** `is blocked by` means
+  prerequisite and nothing else — never a stand-in for "after the current spike"
+  (one-in-flight is a program rule, not a link). A chain filed beside an existing
+  path is linked only where a real prerequisite exists; every ticket in it carries
+  *Pending refinement*, and a pending chain is not next-up until the mentor
+  refines it and, if order matters, links it.
 - **Site:** `astontechnologies.atlassian.net`
 - **Project:** `SCRUM` (board 1)
 - **Workflow:** To Do → In Progress → In Review (finished, awaiting presentation) → Done.
@@ -109,7 +111,8 @@ rely on memory or a side file:
 1. Their **Done** tickets → what's been completed (and which exit questions are behind them).
 2. Their **In progress / In review** ticket → the spike in flight (there should be at most one).
 3. Their remaining **To Do** tickets, ordered by `is blocked by` chains → the planned
-   path; the unblocked head of the chain is next up.
+   path; the unblocked head of the chain is next up. Tickets still marked *Pending
+   refinement* are proposals, not next-up, even when unblocked.
 4. Ticket **comments** → refinement history, progress notes, dead ends, review feedback.
 
 While reading, flag board hygiene problems rather than planning around them: spike
