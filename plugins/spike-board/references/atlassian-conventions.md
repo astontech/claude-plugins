@@ -65,11 +65,15 @@ surprises). Writing it is part of the spike, not extra credit — it's also rehe
 for the presentation. The mentee creates the page once the ticket has a key; the
 skill prints the skeleton.
 
-- **Space:** the Spike Board space.
-- **Page location:** each mentee has their own folder in the space, named after
-  them; their spike pages go inside it, newest last — the folder reads as a
-  chronological record of their journey. (Track grouping lives in Jira via epics;
-  don't mirror it in Confluence.) The mentee creates their folder on their first spike.
+- **Space:** Spike Board — key `DM`, at
+  `astontechnologies.atlassian.net/wiki/spaces/SB`. CQL uses the key: `space = DM`.
+- **Page location:** each mentee has their own folder at the top level of the space,
+  named after them; their spike pages go inside it, newest last — the folder reads as
+  a chronological record of their journey. (Track grouping lives in Jira via epics;
+  don't mirror it in Confluence.) The mentee creates their folder on their first
+  spike: a **folder**, not a page, at the top level of the space, titled with their
+  full name as Jira shows it. Nothing else in the space is theirs to touch — the
+  overview and the `Template - …` pages are the mentor's.
 - **Page title:** the ticket key plus the spike title, e.g.
   `SCRUM-42 — Kafka: produce and consume messages from a Spring Boot app`.
 - **Link both ways:** the ticket's artifact comment links the page; the page opens
@@ -112,6 +116,11 @@ side file:
    *Stub* get drafted to full standard when the spike ahead of them is finished —
    before that spike moves to In Review, never after the demo.
 4. Ticket **comments** → refinement history, progress notes, dead ends, review feedback.
+5. Their **Confluence folder** → whether the documentation home exists yet. Query
+   `space = DM AND type = folder AND title = "⟨full name⟩"`; if that returns nothing,
+   try `space = DM AND title ~ "⟨full name⟩"`. Present → the Confluence handover names
+   it. Missing → the handover tells them to create it first (see SKILL.md
+   **Filing**). Never create it for them.
 
 **Template mechanics:** the ``` fences around a template in SKILL.md delimit it for
 you — never output them; the mentee sees the text, not a code block. Fill every

@@ -164,7 +164,7 @@ The title must name the specific skill, never just the technology: `Spike: Kafka
 
 The skill never writes to Jira or Confluence — the mentee files by hand, and that practice is part of the curriculum. Output the finished ticket in a fenced markdown block that pastes cleanly into Jira, ending with its **Filing block** per the conventions: project `SCRUM`, status To Do, the epic named after the topic (create it if missing), assignee = the mentee, and any `is blocked by` links. When the ticket replaces a stub that's already on the board, the Filing block says so instead: *Paste over ⟨KEY⟩'s description; keep its epic and links.*
 
-Then print the Confluence page skeleton from the conventions in two or three lines and tell them: once the ticket has a key, create the page in your folder in the Spike Board space, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.
+Then print the Confluence page skeleton from the conventions in two or three lines and tell them where it goes, using what the board load found (conventions, **Reading a mentee's state**, item 5). Folder present: *once the ticket has a key, create the page inside your folder ⟨folder title⟩ in the Spike Board space, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.* Folder missing: *you don't have a folder in the Spike Board space yet (astontechnologies.atlassian.net/wiki/spaces/SB). Create a folder — not a page — at the top level of the space, titled ⟨full name⟩; then, once the ticket has a key, create the page inside it, titled `⟨KEY⟩ — ⟨spike title⟩`, and link it in a ticket comment.* Always say which of the two applies — never the bare "your folder" with no location.
 
 ## Filing the queue
 
