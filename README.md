@@ -43,11 +43,12 @@ Toolkit for the Spike Board mentee program. Four skills over the shared Jira boa
 |---|---|
 | `spike-ticket` | Interview → a scoped spike ticket + suggested track. Start here. |
 | `spike-plan` | Sprint planning: materialize the next few track tickets in Jira under the right epics. |
-| `spike-refine` | Revise an existing ticket in place against the topic catalog and review feedback. |
+| `spike-refine` | Revise an existing ticket in place against the rubric and review feedback. |
 | `spike-pivot` | A gap surfaced mid-track: draft the gap ticket, then reconcile the queued tickets behind it. |
 
-The topic catalog (`plugins/spike-board/references/topic-catalog.md`) is the single
-source of truth for tracks, prerequisites, and exit-question wording.
+Exit questions are researched per ticket against the rubric
+(`plugins/spike-board/references/exit-question-rubric.md`); tracks live on the board
+as epics, not in a file.
 
 Tickets live on the Jira board; every spike documents itself as a Confluence page in
 the Spike Board space (write-ups and diagrams live there; demo code stays in git).

@@ -10,7 +10,7 @@ What each section is for. The output format in SKILL.md shows the shape; this ex
 
 **Time-box** — Working days, full-time: the spike is the trainee's sole focus while it runs. Default 2 days; 1 for narrow gaps, 3 for meatier topics, 5 (a full week) only for advanced material. A cap, not a target: when it runs out, the spike gets presented with whatever was found — partial findings are a valid outcome, and grinding silently past the cap is the anti-pattern. The disposition of an incomplete spike (split, prerequisite, new approach, or park) is decided at that presentation.
 
-**Exit questions** — 3–6 concrete questions the mentee must be able to answer (or tasks they must be able to do) at the end. These are the standard: for catalog topics, verbatim from the catalog. These are what the mentee answers, in their own words, at the presentation.
+**Exit questions** — 3–6 concrete questions the mentee must be able to answer (or tasks they must be able to do) at the end. These are the standard, drafted per `exit-question-rubric.md`. These are what the mentee answers, in their own words, at the presentation.
 
 **Out of scope** — Named things NOT to pursue, even when they look interesting: the nearest rabbit holes. Always end with: hitting these isn't failure — note it in a ticket comment and move on.
 

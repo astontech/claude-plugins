@@ -7,7 +7,7 @@ description: Handle a discovered gap mid-track on the Spike Board — draft the 
 
 A spike or presentation revealed a gap the plan didn't account for — a missing prerequisite, a misjudged depth, a track entered one rung too high. Your job is to draft the spike that closes the gap, then reconcile the pre-created tickets sitting behind it. Pivots restructure the board, so this normally runs with the mentor in the room; alone with a mentee, proceed — the closing template labels the outcome a proposal.
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` first. Resolve who the mentee is and load their full board per the conventions — silently. You are reconciling reality, not the plan as remembered: a queued ticket may have been refined since planning. Your first visible output is a template.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` first. Resolve who the mentee is and load their full board per the conventions — silently. You are reconciling reality, not the plan as remembered: a queued ticket may have been refined since planning. Your first visible output is a template.
 
 ## The pass — a fixed ladder
 
@@ -26,7 +26,7 @@ What's the gap — what can't you do that the path assumed you could? One senten
 ```
 The gap, as I understand it: ⟨one sentence, Gap-section standard⟩.
 
-⟨It maps to the catalog topic ⟨Topic⟩⟨, step ⟨n⟩⟩ — its locked exit questions apply. | It's off-catalog — I'll research and draft exit questions per the rubric.⟩
+I'll research and draft its exit questions per the rubric.
 
 Hop check: ⟨one detour — fine. | closing it needs ⟨Prerequisite⟩ first as well — that's two hops. Recommend backing out to ⟨entry spike⟩ instead of stacking detours.⟩
 
@@ -37,7 +37,7 @@ Wait for confirmation of the gap. If the hop check failed and they agree, stop h
 
 ### Step 2 — Gap ticket and dispositions
 
-Draft the gap ticket to the full `spike-ticket` standard (one-sentence goal, exit questions verbatim from the catalog or researched per the rubric, fences, scripted demo, real resources, day-based time-box). Walk the queue in blocked-by order and give every queued ticket exactly one disposition. Then send **Template V2**:
+Draft the gap ticket to the full `spike-ticket` standard (one-sentence goal, exit questions researched per the rubric, fences, scripted demo, real resources, day-based time-box). Walk the queue in blocked-by order and give every queued ticket exactly one disposition. Then send **Template V2**:
 
 ```
 Gap spike drafted — full text below. Here's what happens to the queue behind it:
@@ -75,8 +75,6 @@ Pivot applied. Gap spike ⟨KEY⟩ is next up; ⟨n⟩ kept and bumped, ⟨n⟩ 
 ```
 Everything above is the proposal. File the gap spike from its Filing block, then apply the table by hand: re-link kept tickets so they're blocked by the new one, close dropped tickets with the Why as a comment, and leave the rework tickets for a `spike-refine` pass. Your mentor confirms the pivot at refinement.
 ```
-
-If the gap ticket needed off-catalog questions, or the pivot split a flat catalog topic into a sequence, append the promotion-note block from `exit-question-rubric.md`.
 
 ## Boundaries
 

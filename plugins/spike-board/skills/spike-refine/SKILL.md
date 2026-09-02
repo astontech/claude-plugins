@@ -1,13 +1,13 @@
 ---
 name: spike-refine
-description: Revise an existing Spike Board ticket in place — against the topic catalog, review feedback, or what a presentation revealed. Use when the user wants to refine, rework, tighten, resize, or update a spike ticket, apply mentor feedback from ticket comments, or fix a ticket's scope, exit questions, demo, or time-box.
+description: Revise an existing Spike Board ticket in place — against the rubric, review feedback, or what a presentation revealed. Use when the user wants to refine, rework, tighten, resize, or update a spike ticket, apply mentor feedback from ticket comments, or fix a ticket's scope, exit questions, demo, or time-box.
 ---
 
 # Spike ticket refinement
 
 You are revising one existing ticket on the Spike Board. Refinement is how pre-created tickets get their final shape — the program creates tickets early and sharpens them as presentations and reviews reveal what's actually needed.
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` before starting. Resolve who the mentee is per the conventions — silently. Your first visible output is a template.
+Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md`, and `${CLAUDE_PLUGIN_ROOT}/references/ticket-template.md` before starting. Resolve who the mentee is per the conventions — silently. Your first visible output is a template.
 
 ## The pass — a fixed ladder
 
@@ -25,14 +25,14 @@ Wait.
 
 ### Step 1 — Audit
 
-Fetch the ticket and its comments. The comments are the refinement history — mentor feedback, progress notes, dead ends; the most recent mentor comment is usually what prompted this. Audit every section against the standard `spike-ticket` writes to: goal one sentence and still one spike; exit questions verbatim from the catalog and still the right subset (none the mentee has since passed, none a review exposed as missing; off-catalog questions checked against the rubric); fences still the nearest rabbit holes; scripted demo still proving the core concept; time-box right for the current scope (1 / 2 / 3 / 5 days); starting resources real and still the best entry points. Then send **Template R1**:
+Fetch the ticket and its comments. The comments are the refinement history — mentor feedback, progress notes, dead ends; the most recent mentor comment is usually what prompted this. Audit every section against the standard `spike-ticket` writes to: goal one sentence and still one spike; exit questions still passing the rubric and still the right subset (none the mentee has since passed, none a review exposed as missing); fences still the nearest rabbit holes; scripted demo still proving the core concept; time-box right for the current scope (1 / 2 / 3 / 5 days); starting resources real and still the best entry points. Then send **Template R1**:
 
 ```
 ⟨KEY — title⟩ — refinement audit⟨, prompted by ⟨author⟩'s comment on ⟨date⟩: "⟨gist, under ten words⟩"⟩.
 
 | Section | Verdict | Change | Why |
 |---|---|---|---|
-| Goal | ⟨keep | change⟩ | ⟨— | the new text⟩ | ⟨the comment, catalog line, or rule that drives it⟩ |
+| Goal | ⟨keep | change⟩ | ⟨— | the new text⟩ | ⟨the comment, rubric criterion, or rule that drives it⟩ |
 | Exit questions | ⟨keep | change⟩ | ⟨— | added / removed, verbatim⟩ | ⟨…⟩ |
 | Out of scope | ⟨keep | change⟩ | ⟨— | …⟩ | ⟨…⟩ |
 | Scripted demo | ⟨keep | change⟩ | ⟨— | …⟩ | ⟨…⟩ |
@@ -71,6 +71,6 @@ Comment:
 
 ## Boundaries
 
-- **Never weaken the ladder.** Rewording an exit question to be easier for one mentee is forbidden — shrink the ticket's scope or split it instead. If a catalog question itself seems wrong, flag it for the mentor: catalog fixes apply to everyone at once, through the catalog file, not through one ticket.
+- **Never weaken the ladder.** Rewording an exit question to be easier for one mentee is forbidden — shrink the ticket's scope or split it instead. A question that fails the rubric gets fixed against the rubric — that's refinement, not weakening; name the failed criterion in the Why column.
 - **Refine one ticket.** Sequence problems are a pivot — hand off, per Step 1.
 - **Don't touch status.** Refinement changes content, never workflow state. Moving tickets between columns is the mentee's act (or the planning session's).

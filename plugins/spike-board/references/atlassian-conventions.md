@@ -40,7 +40,9 @@ the home for spike documentation. All four skills read and write both through th
   unresolved blockers; everything behind it is queued.
 - **Epics = topic tracks.** Every spike ticket belongs to the epic for its track
   (e.g., the Kafka track, the CI/CD track). Create a new epic only when starting a
-  track that has none — name it after the catalog track.
+  track that has none — name it after the topic. The epic *is* the track: when a
+  topic is too big for one spike, its steps are tickets under one epic, sequenced
+  with `is blocked by`. No file records tracks — the board does.
 - **One ticket per mentee per spike.** Two mentees on the same spike hold two
   tickets; pace is individual. Ticket assignee = the mentee.
 - **Prerequisites are `is blocked by` links** between tickets, one hop max.

@@ -12,7 +12,7 @@ The ticket you produce is a **draft for refinement**: the mentor reviews it in t
 ## Rules of the program (these shape every ticket)
 
 - **Consumer, not operator.** Mentees learn each technology the way a developer on a team *uses* it, not the way a platform team *runs* it. This one framing answers most scope questions. Default depth target is **Working**: the everyday tasks a dev on a team using this technology actually does. Some topics (concurrency, security) target **Aware** — recognize, explain, escalate — because a junior going deep there produces confidently wrong work.
-- **Exit questions are the standard, and the standard doesn't bend per person.** The exit questions that define a level in a topic are the same for every mentee. What varies per person is the *entry point* — which questions they can already answer — and therefore what this ticket covers. Never write easier questions for a less experienced mentee; write a smaller or earlier spike instead.
+- **Exit questions are the standard, and the standard doesn't bend per person.** Questions are drafted per topic from the research step and rubric in `exit-question-rubric.md` — never from memory. What varies per person is the *entry point* — which questions they can already answer — and therefore what this ticket covers. Never write easier questions for a less experienced mentee; write a smaller or earlier spike instead.
 - **Done = presented, not hours spent.** The deliverable is a presentation to the group with a live demo, plus a linked artifact (demo repo, notes, diagram). The time-box is a cap that protects the mentee, never a target.
 - **Out of scope is a real fence.** Every ticket names things the mentee should NOT pursue. Hitting the fence isn't failure — they note it in a comment and move on.
 - **One goal per spike.** If the goal can't be stated in one sentence, the spike is too broad — split it, and put the rest in the suggested track.
@@ -24,7 +24,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md` first — its *
 
 **Load silently.** The mentee's first visible output from you is the Step 1 template — optionally preceded by one sentence naming a board hygiene problem, nothing else. Never narrate the setup: not the marker check, not who you decided the mentee is, not "loading your board", not what tools you called. If you find yourself writing a sentence about how you know who they are, delete it.
 
-Also read `${CLAUDE_PLUGIN_ROOT}/references/catalog-menu.md`, `${CLAUDE_PLUGIN_ROOT}/references/topic-catalog.md`, and `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md` now — the interview pastes from the first two and drafts by the third.
+Also read `${CLAUDE_PLUGIN_ROOT}/references/exit-question-rubric.md` now — the interview drafts by it.
 
 ## The interview — a fixed ladder
 
@@ -47,18 +47,14 @@ On a mentee machine, skip this step — never send Template O to a mentee.
 
 ### Step 1 — Opener
 
-Pick exactly one template from what the board said. Where a template calls for the catalog menu, paste the block from `catalog-menu.md` between its markers, verbatim.
+Pick exactly one template from what the board said.
 
 **Template A — empty board** (no spike tickets assigned to them):
 
 ```
 Your board is empty, so this is your first spike.
 
-**1. What do you want to learn, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section.
-
-**2. Pick a topic from the catalog, or name something else.** Catalog topics come with locked exit questions.
-
-⟨catalog menu block⟩
+**What do you want to learn, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section.
 ```
 
 **Template B — a path exists** (a spike in flight and/or a queued To Do chain):
@@ -80,52 +76,34 @@ If they answer *next step* or *pivot*, hand off with one sentence and stop — t
 ```
 You've finished ⟨N⟩ spike⟨s⟩: ⟨KEY — title, one per line⟩. Nothing is in flight or queued, so this is a fresh start.
 
-**1. What do you want to learn next, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section.
-
-**2. Pick a topic from the catalog, or name something else.** Natural next steps from what you've finished: ⟨the catalog's next track step or dependent topics for each Done topic, comma-separated⟩. Catalog topics come with locked exit questions.
-
-⟨catalog menu block⟩
+**What do you want to learn next, and where are you with it today?** One sentence is enough — either a specific thing you can't do yet ("I can't follow the PRs that touch our Kafka listeners") or simply that you've never used it. Either answer becomes the ticket's Gap section. Natural next steps from what you've finished: ⟨one or two technologies that build on the Done spikes, comma-separated⟩.
 ```
 
 Wait for their answer. If they gave a topic but nothing about where they are with it, or the reverse, ask only for the missing half in one sentence — don't re-send the template.
 
-**Take the gap as given. Ask once, never probe.** "I've never used it" / "I know nothing about it" is a complete, acceptable gap — the most common one for a first spike. Don't push for a more specific can't-do sentence, don't ask what they'd want to do with it, don't ask for context. Write the Gap as *"I've never used ⟨topic⟩ and can't read or contribute to code that touches it,"* set the entry point at step 1 (or every question, for an untracked topic), and move to Step 2. A specific gap, when they volunteer one, is simply used as written.
+**Take the gap as given. Ask once, never probe.** "I've never used it" / "I know nothing about it" is a complete, acceptable gap — the most common one for a first spike. Don't push for a more specific can't-do sentence, don't ask what they'd want to do with it, don't ask for context. Write the Gap as *"I've never used ⟨topic⟩ and can't read or contribute to code that touches it,"* set the entry point at every question (step 1, for a split topic), and move to Step 2. A specific gap, when they volunteer one, is simply used as written.
 
 ### Step 2 — Self-assessment against the exit questions
 
-Look the topic up in `topic-catalog.md`.
-
-**Template D — catalog topic:**
+Run the research step in `exit-question-rubric.md` silently: official docs' concepts index plus one reputable curriculum, candidates from their overlap, the depth level, a step split if the topic is bigger than one spike, prerequisites, 4–6 questions that each pass the six-point rubric, sources kept for the ticket. Never draft from memory alone, and pitch at the rung above where the mentee is (the rubric's floor rule). Then send **Template D**:
 
 ```
-⟨Topic⟩ is a catalog topic⟨, and a ⟨N⟩-step track — you enter at the first step whose questions you can't answer⟩. These are the exit questions⟨ for step ⟨n⟩, ⟨step title⟩⟩, verbatim:
+Here are the exit questions for ⟨Topic⟩ — ⟨Working | Aware⟩ level, consumer-not-operator, drawn from the official docs and a standard curriculum⟨. It's bigger than one spike, so it's ⟨N⟩ steps; these are step 1, ⟨step title⟩⟩:
 
 1. ⟨question⟩
 2. ⟨question⟩
-…
+…  (4–6 total; 3–5 per step)
 
 Which of these could you answer confidently right now? Give me the numbers. For each one you claim, answer it in a sentence — anything vague goes into the spike.
 ```
 
-For a tracked topic, show one step at a time, starting at step 1; if they clear every question in a step, re-send Template D for the next step. The entry point is the first step with questions they can't answer.
-
-**Template E — off-catalog topic.** Before sending it, run the research step in `exit-question-rubric.md` silently: official docs' concepts index plus one reputable curriculum, candidates from their overlap, 4–6 questions that each pass the six-point rubric, sources kept for the promotion note. Never draft from memory alone. Then:
-
-```
-⟨Topic⟩ isn't in the catalog, so these are draft exit questions in the catalog's style — Working level, consumer-not-operator, drawn from the official docs and a standard curriculum. I'll flag them to your mentor for promotion into the catalog.
-
-1. ⟨question⟩
-2. ⟨question⟩
-…  (4–6 total)
-
-Which of these could you answer confidently right now? Give me the numbers. For each one you claim, answer it in a sentence — anything vague goes into the spike.
-```
+For a split topic, show one step at a time, starting at step 1; if they clear every question in a step, re-send Template D for the next step. The entry point is the first step with questions they can't answer.
 
 Judge their one-sentence answers. A concrete answer skips the question; a vague one keeps it in the spike — their claim gets stress-tested publicly at the presentation, so catching optimism now is a kindness. The questions they can't answer define this spike.
 
 ### Step 3 — Prerequisites
 
-Take the prerequisites from the topic's catalog entry. **Skip this step entirely if the catalog says `Prerequisites: none`** — go straight to scoping. For an off-catalog topic, name the one or two technologies the spike can't be done without.
+Take the prerequisites from the research step. **Skip this step entirely when there are none** — go straight to scoping.
 
 **Template F:**
 
@@ -133,7 +111,7 @@ Take the prerequisites from the topic's catalog entry. **Skip this step entirely
 Last check. ⟨Topic⟩ leans on ⟨prerequisite⟩⟨ and ⟨prerequisite⟩⟩. Have you used ⟨it/each⟩ for real before — yes or no⟨ for each⟩?
 ```
 
-If a required technology is completely new to them, apply the redirect rule: draft the prerequisite spike instead, and put the original in the filed queue as blocked by it. Two or more missing prerequisites means they're entering this track too early — say so and suggest a different starting spike.
+If a hard prerequisite is completely new to them, apply the redirect rule: draft the prerequisite spike instead, and put the original in the filed queue as blocked by it. Two or more missing prerequisites means they're entering this track too early — say so and suggest a different starting spike.
 
 After Step 3 (or after Step 2 when Step 3 is skipped), stop asking. Everything else is yours to decide.
 
@@ -142,8 +120,8 @@ After Step 3 (or after Step 2 when Step 3 is skipped), stop asking. Everything e
 From the interview, write:
 
 - **Goal** — one sentence. The test: if it needs "and", it's probably two spikes.
-- **Exit questions** — 3–6, only the ones the mentee couldn't answer. Copy catalog wording verbatim when the topic is in the catalog, so every mentee on this topic faces identical questions.
-- **Out of scope** — from the catalog when available; otherwise name the 4–6 nearest rabbit holes (internals, administration, tuning, adjacent tools). Include the line about noting it in a comment and moving on.
+- **Exit questions** — 3–6, only the ones the mentee couldn't answer, exactly as shown in Step 2.
+- **Out of scope** — the 4–6 nearest rabbit holes (internals, administration, tuning, adjacent tools): whatever the research step's sources file under advanced or operations. Include the line about noting it in a comment and moving on.
 - **A scripted demo** — the single most valuable thing you can add. Name the exact moment the presentation must show, chosen so it *demonstrates the core concept*, not just that code runs. (Kafka: kill the consumer, publish, restart it, show what happens. CI: push a broken test, watch red, fix, watch green.) A scripted demo keeps the presentation from becoming slideware and gives the mentee a rehearsal target.
 - **Starting resources** — 2–3 real links: official docs or quickstarts first, one concepts piece if the "why" matters. Verify they're real; never invent URLs. If they have an artifact from a previous spike that this one can build on (a Spring Boot app to containerize, a container to deploy), point at it — spikes that compound teach that real projects accrete.
 
@@ -201,7 +179,7 @@ Show the mentee the finished draft first, then offer to file it. If the `atlassi
 
 ## Filing the queue
 
-The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the catalog's track when one exists (one step per ticket, verbatim questions), otherwise a proposed sequence in the same shape (flag drafted questions for catalog promotion). Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`). For an off-catalog topic, end your last message with the promotion-note block from `exit-question-rubric.md` — sources included — and tell the mentee to paste it under the entry ticket's Progress notes so the mentor finds it at refinement.
+The proposal is filed, not narrated. After the entry ticket, draft the 2–4 spikes that would follow it in the topic — the remaining steps from the research step when the topic split, otherwise the natural next rungs — one ticket each, with their own rubric-checked questions. Each follow-on is a rough draft to the same ticket structure — goal, exit questions, fences, epic, day-based time-box — with a rougher demo and resource list allowed, and an explicit line in the body: *Pending refinement — filed as proposed queue, <date>.* Mark cross-topic prerequisites as links to their spikes (`requires: Docker spike`).
 
 The mentee files the whole chain as real tickets: entry spike at the head, each follow-on `is blocked by` the one before it, each under its topic's epic.
 
