@@ -127,6 +127,12 @@ with only the slots filled, never a free-form summary:
 ⟨Hygiene: ⟨one line per problem⟩ — omit the line entirely when the board is clean⟩
 ```
 
+**Template mechanics, every skill:** the ``` fences around a template in a SKILL.md
+delimit it for you — never output them; the mentee sees the text, not a code block.
+Fill every `⟨slot⟩` and remove the brackets — the characters ⟨ and ⟩ never appear in
+output. Never mention "mentee machine", "operator machine", the marker, or the write
+gate in anything a mentee reads.
+
 **Slot rule for every template in every skill:** on a mentee machine the templates
 say *you / your*. On an operator machine, after the mentor names the mentee, replace
 *you / your* with the mentee's first name / *⟨Name⟩'s* throughout — nothing else in

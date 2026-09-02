@@ -19,7 +19,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUG
 
 ## The session — a fixed ladder
 
-One message per step, in this order. Send each template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting. Don't merge steps, don't add questions a step doesn't ask, and don't narrate your setup. You may put one short sentence before a template reacting to what was just said — never one that restates the template's first line. Apply the slot rule from the conventions (*you/your* → the mentee's name on an operator machine).
+One message per step, in this order. Send each template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting. Don't merge steps, don't add questions a step doesn't ask, and don't narrate your setup. You may put one short sentence before a template reacting to what was just said — never one that restates the template's first line. Apply the slot rule from the conventions (*you/your* → the mentee's name on an operator machine). The fences around templates below are delimiters — never output them. Fill every `⟨slot⟩` and drop the brackets; ⟨ and ⟩ never appear in output. Never write "mentee machine" or "operator machine" to the user.
 
 ### Step 1 — Board
 

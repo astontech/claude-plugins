@@ -11,7 +11,7 @@ Read `${CLAUDE_PLUGIN_ROOT}/references/atlassian-conventions.md`, `${CLAUDE_PLUG
 
 ## The pass — a fixed ladder
 
-One message per step. Send each template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting. Don't narrate your setup. One short sentence before a template is allowed — never one restating its first line. Apply the slot rule (*you/your* → the mentee's name on an operator machine).
+One message per step. Send each template with only the `⟨slots⟩` filled; keep its sentences, order, and formatting. Don't narrate your setup. One short sentence before a template is allowed — never one restating its first line. Apply the slot rule (*you/your* → the mentee's name on an operator machine). The fences around templates below are delimiters — never output them. Fill every `⟨slot⟩` and drop the brackets; ⟨ and ⟩ never appear in output. Never write "mentee machine" or "operator machine" to the user.
 
 ### Step 1 — Board and gap
 
