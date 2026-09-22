@@ -1,6 +1,6 @@
 {
   "name": "interview-rehearsal",
-  "description": "Interview rehearsal for engineers \u2014 build the fact sheet and spoken talk track for your last project, then get drilled on it the way a client interviewer would. Recording happens through interview-shell, not here.",
+  "description": "Interview rehearsal for engineers \u2014 build the fact sheet and spoken talk track for your last project, then get drilled on it the way a client interviewer would. Recording happens through NIGEL (astontech/nigel), not here.",
   "version": "0.3.0",
   "author": {
     "name": "Aston Technologies"

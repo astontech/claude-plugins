@@ -80,7 +80,7 @@ interviewer guides); sources are in the skill's `references/interviewer-method.m
 
 **Recording.** The plugin itself writes nothing anywhere but `talk-track.md` in your
 working directory. The intended way to run it is through
-[interview-shell](https://github.com/astontech/interview-shell), which wraps Claude Code
-with a browser UI and voice input and records each session to Aston's readiness
-backend. The shell bundles this skill; install the plugin directly only to run the
+[NIGEL](https://github.com/astontech/nigel), which wraps Claude Code with a browser
+UI and voice input and records each session to its backend, DORIS. NIGEL bundles this
+skill; install the plugin directly only to run the
 skill unrecorded in a terminal.
