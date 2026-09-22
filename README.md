@@ -14,8 +14,8 @@ In any Claude Code session:
 
 ## First-time setup: connecting Jira
 
-Both plugins bundle an `atlassian` MCP server that lets Claude read the spike board
-as you (and, for interview-rehearsal, append to your own readiness page). It needs a one-time sign-in — do this right after installing:
+The plugin bundles an `atlassian` MCP server that lets Claude read the spike board
+as you. It needs a one-time sign-in — do this right after installing:
 
 1. Restart Claude Code (plugins load at session start), then run `/mcp`.
 2. Select the `atlassian` server and choose **Authenticate**. A browser window opens.
@@ -78,16 +78,9 @@ Start it with "I have an interview coming up" or "drill me". The method is drawn
 interviewers' own guidance (Amazon bar raisers, hiring-manager guides, staffing-firm
 interviewer guides); sources are in the skill's `references/interviewer-method.md`.
 
-**On claude.ai without Claude Code:** the same skill works as a custom skill. Download
-`plugins/interview-rehearsal/skills/interview-rehearsal/` as a zip and upload it under
-Settings → Capabilities → Skills, then keep your `talk-track.md` in a Project so drill
-sessions can read it.
-
-**What gets recorded.** Drills, and only drills, are recorded to a page of yours under
-*Interview readiness* in the Spike Board Confluence space, under your own login: a line
-when a drill starts, a table when each thread ends, and the debrief. A session you
-close early still leaves the start line and any finished threads. The record shows
-where a thread held, where it ran out, and how many fact-sheet slots are still open —
-that last number should fall over time. Your manager reads these pages. The drill
-opener says so every time; build mode writes nothing anywhere but `talk-track.md`.
-If the Atlassian sign-in isn't done, the drill still runs, just unrecorded.
+**Recording.** The plugin itself writes nothing anywhere but `talk-track.md` in your
+working directory. The intended way to run it is through
+[interview-shell](https://github.com/astontech/interview-shell), which wraps Claude Code
+with a browser UI and voice input and records each session to Aston's readiness
+backend. The shell bundles this skill; install the plugin directly only to run the
+skill unrecorded in a terminal.

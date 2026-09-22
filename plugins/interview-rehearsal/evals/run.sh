@@ -21,7 +21,7 @@ for name in "${names[@]}"; do
   case "$NEEDS" in *talk-track*) cp "$FIX/talk-track.md" "$SIM/talk-track.md";; esac
   out="$OUT/$name.txt"
   ( cd "$SIM" && env -i HOME="$HOME" PATH="$PATH" USER="$USER" \
-      claude -p "$PROMPT" --max-turns 15 --output-format text --plugin-dir "$PLUGROOT" --add-dir "$PLUGROOT" --allowedTools Read Write mcp__plugin_interview-rehearsal_atlassian__atlassianUserInfo ) > "$out" 2>&1
+      claude -p "$PROMPT" --max-turns 15 --output-format text --plugin-dir "$PLUGROOT" --add-dir "$PLUGROOT" --allowedTools Read Write ) > "$out" 2>&1
   missed=""
   while IFS= read -r rx; do [ -z "$rx" ] && continue; grep -Eq -- "$rx" "$out" || missed+="  MUST      : $rx"$'\n'; done <<< "$MUST"
   while IFS= read -r rx; do [ -z "$rx" ] && continue; grep -Eq -- "$rx" "$out" && missed+="  MUST_NOT  : $rx"$'\n'; done <<< "$MUST_NOT"

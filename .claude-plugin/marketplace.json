@@ -12,7 +12,7 @@
     {
       "name": "interview-rehearsal",
       "source": "./plugins/interview-rehearsal",
-      "description": "Interview rehearsal for engineers \u2014 build the fact sheet and spoken talk track for your last project, then get drilled on it the way a client interviewer would."
+      "description": "Interview rehearsal skill: build a fact sheet + spoken talk track, then drill. Run it through interview-shell to record."
     }
   ]
 }
