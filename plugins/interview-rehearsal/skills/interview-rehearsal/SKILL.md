@@ -12,11 +12,11 @@ Two modes, chosen by state:
 - **Build** — no talk track exists yet. Interview the engineer, fill the fact sheet, write `talk-track.md`.
 - **Drill** — a talk track exists. Play the interviewer. Pull threads until they run out. Debrief.
 
-Also read `references/fact-sheet.md`, `references/probe-bank.md`, and `references/talk-track-template.md` now — build writes to the last, drill asks from the second, both judge by the first.
+Also read `references/fact-sheet.md`, `references/probe-bank.md`, `references/talk-track-template.md`, and `references/readiness-record.md` now — build writes to the third, drill asks from the second and records to the fourth, both judge by the first.
 
 ## Before the first message
 
-Look for an existing talk track, silently: a file named `talk-track.md` in the working directory, a file the user attached, or pasted text beginning `# Talk track`. Say nothing about the search. The first thing the engineer sees is a Step 1 template.
+Look for an existing talk track, silently: a file named `talk-track.md` in the working directory, a file the user attached, or pasted text beginning `# Talk track`. Also look for a `drill-log.md` with unposted sections and, if there is one, post it per **Local checkpoint** in `references/readiness-record.md`. Say nothing about the search. The first thing the engineer sees is a Step 1 template, preceded at most by the one recovery sentence.
 
 ## Template mechanics
 
@@ -45,7 +45,7 @@ Rough is fine. I'll ask for what's missing.
 ```
 Found your talk track for ⟨project name from the file⟩ (⟨N⟩ slots still open).
 
-- **Drill** — I play the interviewer. One question at a time, no coaching until the end. I pull one thread until it runs out, then the next. Say "stop" whenever you want the debrief.
+- **Drill** — I play the interviewer. One question at a time, no coaching until the end. I pull one thread until it runs out, then the next. Say "stop" whenever you want the debrief. The record of each drill — where it held, where it ran out, open slots — goes to your page under Interview readiness in Confluence, where your manager reads it.
 - **Rebuild** — start over from your notes and write a fresh talk track.
 
 Drill or rebuild?
@@ -136,15 +136,17 @@ Next:
 
 You are the client interviewer now: one or two client engineers, an hour, deciding whether this person can deliver on their stack starting Monday. One question per message. No coaching, no praise, no "great answer" — an interviewer just asks the next question. Build each question on what they just said, in the interviewer's voice, using their component and decision names from the talk track.
 
+Before Template G, check the readiness record is reachable (`atlassianUserInfo`). If it is not, the one sentence in `references/readiness-record.md` goes before the template and the drill runs unrecorded.
+
 Open with **Template G:**
 
 ```
-Drill rules: I ask, you answer out loud as you would in the room, I follow up. No feedback until the debrief. Say "pause" for feedback on your last answer, "stop" for the debrief.
+Drill rules: I ask, you answer out loud as you would in the room, I follow up. No feedback until the debrief. Say "pause" for feedback on your last answer, "stop" for the debrief. This drill is recorded to your Interview readiness page as we go — at the start, after each thread, and at the debrief — so a closed window still leaves a record.
 
 Tell me about yourself.
 ```
 
-Then run threads per **Thread order for a drill** in `references/probe-bank.md`: pick one claim from their *what I owned* block, run the categories in order, one question per turn, three to five links in the depth chain. When an answer is vague, contradicts the talk track, or is "I don't know", note it silently and ask the next question anyway — the interviewer doesn't rescue. A second thread starts from a different claim. After two threads, the client round: three questions from the bank's client category. Then the debrief.
+After their answer, write the **Start** entry per `references/readiness-record.md`, silently. Then run threads per **Thread order for a drill** in `references/probe-bank.md`: pick one claim from their *what I owned* block, run the categories in order, one question per turn, three to five links in the depth chain. When an answer is vague, contradicts the talk track, or is "I don't know", note it silently and ask the next question anyway — the interviewer doesn't rescue. When a thread's last category is answered, write the **Thread end** entry, silently, before the next question. A second thread starts from a different claim. After two threads, the client round: three questions from the bank's client category. Then the debrief. With a filesystem, rewrite `drill-log.md` after every answer as the reference describes.
 
 **"pause"** — give feedback on their last answer in at most three sentences (what an interviewer heard, strong or weak, per the bank's strong/weak line for that category), then re-ask the same question.
 
@@ -167,4 +169,4 @@ Then run threads per **Thread order for a drill** in `references/probe-bank.md`:
 Fix those, then drill again with a different thread.
 ```
 
-Keep the debrief honest. A thread that held is reported as held. A weak read names what was weak.
+Write the **Debrief** entry to the readiness record and delete `drill-log.md` if one exists. Keep the debrief honest. A thread that held is reported as held. A weak read names what was weak.
