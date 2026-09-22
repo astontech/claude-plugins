@@ -9,6 +9,7 @@ In any Claude Code session:
 ```
 /plugin marketplace add astontech/claude-plugins
 /plugin install spike-board@astontech
+/plugin install interview-rehearsal@astontech
 ```
 
 ## First-time setup: connecting Jira
@@ -57,3 +58,29 @@ Exit questions are researched per ticket against the rubric
 (`plugins/spike-board/references/exit-question-rubric.md`); tracks live on the board
 as epics, not in a file. Conventions for Jira and Confluence are in
 `plugins/spike-board/references/atlassian-conventions.md`.
+
+### interview-rehearsal
+
+Rehearsal for the client interview: the hour where one or two client engineers ask
+"tell me about your last project" and then pull one thread deep. One skill,
+`interview-rehearsal`, two modes chosen by state:
+
+- **Build** — no talk track yet. Paste your notes or resume; the skill asks for what's
+  missing in three short batches ("don't know" is a fine answer) and writes
+  `talk-track.md`: a spoken opening, the project in three depths, the fact sheet an
+  interviewer actually digs for, three stories, the probes to expect against *your*
+  components, and a list of what to go find out.
+- **Drill** — `talk-track.md` exists. The skill plays the interviewer: one question at
+  a time, no coaching, pulling a thread until it runs out, then a debrief that scores
+  each category strong or weak and lists what to fix.
+
+Start it with "I have an interview coming up" or "drill me". The method is drawn from
+interviewers' own guidance (Amazon bar raisers, hiring-manager guides, staffing-firm
+interviewer guides); sources are in the skill's `references/interviewer-method.md`.
+
+**On claude.ai without Claude Code:** the same skill works as a custom skill. Download
+`plugins/interview-rehearsal/skills/interview-rehearsal/` as a zip and upload it under
+Settings → Capabilities → Skills, then keep your `talk-track.md` in a Project so drill
+sessions can read it.
+
+No MCP servers, no writes anywhere but `talk-track.md` in your working directory.

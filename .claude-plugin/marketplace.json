@@ -7,7 +7,12 @@
     {
       "name": "spike-board",
       "source": "./plugins/spike-board",
-      "description": "Spike Board mentee toolkit — interview, research exit questions, and draft spike tickets for the Jira board."
+      "description": "Spike Board mentee toolkit \u2014 interview, research exit questions, and draft spike tickets for the Jira board."
+    },
+    {
+      "name": "interview-rehearsal",
+      "source": "./plugins/interview-rehearsal",
+      "description": "Interview rehearsal for engineers \u2014 build the fact sheet and spoken talk track for your last project, then get drilled on it the way a client interviewer would."
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "interview-rehearsal",
+  "description": "Interview rehearsal for engineers — build the fact sheet and spoken talk track for your last project, then get drilled on it the way a client interviewer would.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aston Technologies"
+  }
+}
